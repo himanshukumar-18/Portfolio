@@ -1,5 +1,5 @@
 import { useState } from "react";
-import Projectcard from "./ProjectCard";
+import Projectcard from "./Projectcard";
 
 const projects = [
     {
