@@ -1,0 +1,73 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import "tailwindcss";
+
+
+:root {
+    /* fonts */
+    --font-body: "Poppins", sans-serif, system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+
+    /* ===== Base Backgrounds ===== */
+    --bg-primary: #0b0d12;
+    /* Main background (near-black, not pure black) */
+    --bg-secondary: #11141b;
+    /* Sections */
+    --bg-tertiary: #171b24;
+    /* Cards */
+
+    /* ===== Glass / Blur ===== */
+    --glass-bg: rgba(255, 255, 255, 0.08);
+    --glass-border: rgba(255, 255, 255, 0.18);
+    --glass-shadow: 0 8px 30px rgba(0, 0, 0, 0.35);
+
+    /* ===== Text Colors ===== */
+    --text-primary: #f5f7fa;
+    /* Main text */
+    --text-secondary: #b5b9c6;
+    /* Sub text */
+    --text-muted: #8a8f9e;
+    /* Muted / labels */
+
+    /* ===== Accent (Brand Color) ===== */
+    --accent-primary: #f9004d;
+    /* Your pink – keep it */
+    --accent-soft: rgba(249, 0, 77, 0.15);
+    --accent-glow: 0 0 30px rgba(249, 0, 77, 0.35);
+
+    /* ===== Borders ===== */
+    --border-light: rgba(255, 255, 255, 0.12);
+    --border-dark: rgba(0, 0, 0, 0.4);
+
+    /* ===== Buttons ===== */
+    --btn-bg: rgba(255, 255, 255, 0.08);
+    --btn-hover: rgba(249, 0, 77, 0.85);
+    --btn-text: #ffffff;
+
+    /* ===== Gradients ===== */
+    --gradient-accent: linear-gradient(135deg,
+            #f9004d,
+            #ff4f8b);
+
+    --gradient-dark: linear-gradient(180deg,
+            rgba(255, 255, 255, 0.05),
+            rgba(255, 255, 255, 0));
+
+    /* ===== Radius ===== */
+    --radius-sm: 8px;
+    --radius-md: 14px;
+    --radius-lg: 22px;
+    --radius-xl: 28px;
+
+    /* ===== Transition ===== */
+    --transition-fast: 0.2s ease;
+    --transition-smooth: 0.35s ease;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-body);
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+}
