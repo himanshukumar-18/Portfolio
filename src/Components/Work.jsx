@@ -1,5 +1,5 @@
 import { useState } from "react";
-import ProjectCard from "./ProjectCard";
+import Projectcard from "./ProjectCard";
 
 const projects = [
     {
@@ -55,7 +55,7 @@ const Work = () => {
                 {/* GRID */}
                 <div className="mt-20 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
                     {projects.map((project, index) => (
-                        <ProjectCard
+                        <Projectcard
                             key={index}
                             project={project}
                             isOpen={activeIndex === index}
