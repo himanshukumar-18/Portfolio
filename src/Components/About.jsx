@@ -10,59 +10,86 @@ const About = () => {
             id: 0,
             label: "Main skills",
             content: (
-                <div className="mainSkill h-[200px]">
-                    <h3 className="font-bold text-[#717173]">Front-end</h3>
-                    <p className="mb-3 text-[#7e7e7e]">
-                        <span>HTML</span>, <span>CSS</span>, <span>JAVASCRIPT</span>, <span>REACT</span>, <span>TAILWIND CSS</span>
-                    </p>
+                <div className="space-y-4">
+                    <div>
+                        <h3 className="font-bold text-[var(--accent-primary)] text-sm uppercase tracking-wide">Front-end</h3>
+                        <div className="mt-2 flex flex-wrap gap-2">
+                            {["HTML", "CSS", "JavaScript", "React", "Tailwind CSS"].map((skill) => (
+                                <span key={skill} className="px-3 py-1 text-xs rounded-full bg-white/10 text-[var(--text-secondary)]">
+                                    {skill}
+                                </span>
+                            ))}
+                        </div>
+                    </div>
 
-                    <h3 className="font-bold text-[#717173]">
-                        Back-end
-                    </h3>
-                    <p className="mb-3 text-[#7e7e7e]">
-                        <span>NODE JS</span>, <span>EXPRESS JS</span>, <span>API</span>, <span>NPM</span>, <span>PYTHON</span>
-                    </p>
+                    <div>
+                        <h3 className="font-bold text-[var(--accent-primary)] text-sm uppercase tracking-wide">Back-end</h3>
+                        <div className="mt-2 flex flex-wrap gap-2">
+                            {["Node.js","API", "Python(basic)"].map((skill) => (
+                                <span key={skill} className="px-3 py-1 text-xs rounded-full bg-white/10 text-[var(--text-secondary)]">
+                                    {skill}
+                                </span>
+                            ))}
+                        </div>
+                    </div>
 
-                    <h3 className="font-bold text-[#717173]">Database</h3>
-                    <p className="text-[#7e7e7e] mb-3">
-                        <span>MONGODB</span>, <span>MYSQL</span>
-                    </p>
+                    <div>
+                        <h3 className="font-bold text-[var(--accent-primary)] text-sm uppercase tracking-wide">Database</h3>
+                        <div className="mt-2 flex flex-wrap gap-2">
+                            {["MongoDB", "MySQL"].map((skill) => (
+                                <span key={skill} className="px-3 py-1 text-xs rounded-full bg-white/10 text-[var(--text-secondary)]">
+                                    {skill}
+                                </span>
+                            ))}
+                        </div>
+                    </div>
 
-
-                    <h3 className="font-bold text-[#717173]">Version Control</h3>
-                    <p className="text-[#7e7e7e]">
-                        <span>GIT</span>, <span>GITHUB</span>
-                    </p>
+                    <div>
+                        <h3 className="font-bold text-[var(--accent-primary)] text-sm uppercase tracking-wide">Version Control</h3>
+                        <div className="mt-2 flex flex-wrap gap-2">
+                            {["Git", "GitHub"].map((skill) => (
+                                <span key={skill} className="px-3 py-1 text-xs rounded-full bg-white/10 text-[var(--text-secondary)]">
+                                    {skill}
+                                </span>
+                            ))}
+                        </div>
+                    </div>
                 </div>
             ),
         },
 
         {
             id: 1,
-            label: "Education & Certification",
+            label: "Education",
             content: (
-                <div className="education h-[200px]">
-                    <h3 className="font-bold text-[#717173]">Bachelor Degree (BCA)</h3>
-                    <p className="mb-3 text-[#7e7e7e]">
-                        Jharkhand Rai University Ranchi (2025 - 2028)
-                    </p>
+                <div className="space-y-5">
+                    <div className="border-l-2 border-[var(--accent-primary)] pl-4">
+                        <h3 className="font-bold text-[var(--text-primary)]">Bachelor Degree (BCA)</h3>
+                        <p className="text-sm text-[var(--text-muted)] mt-1">
+                            Jharkhand Rai University Ranchi (2025 - 2028)
+                        </p>
+                    </div>
 
-                    <h3 className="font-bold text-[#717173]">Web Development Course</h3>
-                    <p className="mb-3 text-[#7e7e7e]">
-                        Arena Animation Hazaribag (6 month's With Certificate)
-                    </p>
+                    <div className="border-l-2 border-[var(--accent-primary)] pl-4">
+                        <h3 className="font-bold text-[var(--text-primary)]">Web Development Course</h3>
+                        <p className="text-sm text-[var(--text-muted)] mt-1">
+                            Arena Animation Hazaribag (6 months With Certificate)
+                        </p>
+                    </div>
 
-                    <h3 className="font-bold text-[#717173]">
-                        Higher Secoundry Education
-                    </h3>
-                    <p className="mb-3 text-[#7e7e7e]">
-                        Barhi Inter Collage Barhi 57% (JAC 2022 - 2024)
-                    </p>
+                    <div className="border-l-2 border-[var(--accent-primary)] pl-4">
+                        <h3 className="font-bold text-[var(--text-primary)]">Higher Secondary Education</h3>
+                        <p className="text-sm text-[var(--text-muted)] mt-1">
+                            Barhi Inter College Barhi 57% (JAC 2022 - 2024)
+                        </p>
+                    </div>
 
-                    <h3 className="font-bold text-[#717173]">Secoundry Education</h3>
-                    <p className="mb-3 text-[#7e7e7e]">
-                        Vivekananda Central School Hazaribag 60% (CBSE 2010 - 2022)
-                    </p>
+                    <div className="border-l-2 border-[var(--accent-primary)] pl-4">
+                        <h3 className="font-bold text-[var(--text-primary)]">Secondary Education</h3>
+                        <p className="text-sm text-[var(--text-muted)] mt-1">
+                            Vivekananda Central School Hazaribag 60% (CBSE 2010 - 2022)
+                        </p>
+                    </div>
                 </div>
             ),
         },
@@ -71,38 +98,78 @@ const About = () => {
             id: 2,
             label: "Experience",
             content: (
-                <div className="exp h-[200px]">
-                    <p>
-                        I developed hands-on experience in making websites through freelance. This are link to check out [<a className="font-semibold text-[#717173] underline hover:text-[#f9004d] duration-200" href="https://skillsnation.in/" target="blank_">SkillNation.in</a> , <a className="font-semibold underline text-[#717173] hover:text-[#f9004d] duration-200" href="https://udayanpublicschool.org/" target="blank_">UdyanPublicSchool.in</a>]
+                <div className="space-y-4">
+                    <p className="text-[var(--text-secondary)]">
+                        I developed hands-on experience in making websites through freelance work. Here are some projects I have worked on:
                     </p>
+                    
+                    <div className="space-y-3 pt-2">
+                        <a 
+                            href="https://thetastecatering.com/" 
+                            target="_blank" 
+                            rel="noopener noreferrer"
+                            className="flex items-center gap-2 text-[var(--text-primary)] hover:text-[var(--accent-primary)] transition-colors"
+                        >
+                            <span className="w-2 h-2 rounded-full bg-[var(--accent-primary)]" />
+                            thetastecatering.com
+                            <svg xmlns="http://www.w3.org/2000/svg" className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
+                                <path strokeLinecap="round" strokeLinejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                            </svg>
+                        </a>
+
+                        <a 
+                            href="https://skillsnation.in/" 
+                            target="_blank" 
+                            rel="noopener noreferrer"
+                            className="flex items-center gap-2 text-[var(--text-primary)] hover:text-[var(--accent-primary)] transition-colors"
+                        >
+                            <span className="w-2 h-2 rounded-full bg-[var(--accent-primary)]" />
+                            SkillNation.in
+                            <svg xmlns="http://www.w3.org/2000/svg" className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
+                                <path strokeLinecap="round" strokeLinejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                            </svg>
+                        </a>
+                        
+                        <a 
+                            href="https://udayanpublicschool.org/" 
+                            target="_blank" 
+                            rel="noopener noreferrer"
+                            className="flex items-center gap-2 text-[var(--text-primary)] hover:text-[var(--accent-primary)] transition-colors"
+                        >
+                            <span className="w-2 h-2 rounded-full bg-[var(--accent-primary)]" />
+                            UdyanPublicSchool.in
+                            <svg xmlns="http://www.w3.org/2000/svg" className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
+                                <path strokeLinecap="round" strokeLinejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                            </svg>
+                        </a>
+                    </div>
                 </div>
             ),
         },
     ];
 
     return (
-        <>
-            <section
-                id="About"
-                className="relative w-full py-24 overflow-hidden"
-            >
-                {/* Ambient background */}
-                <div className="absolute inset-0 bg-[var(--bg-secondary)]" />
-                <div className="absolute inset-0 bg-gradient-to-b from-transparent via-black/20 to-black/40" />
+        <section
+            id="About"
+            className="relative w-full py-24 overflow-hidden"
+        >
+            {/* Ambient background */}
+            <div className="absolute inset-0 bg-[var(--bg-secondary)]" />
+            <div className="absolute inset-0 bg-gradient-to-b from-transparent via-black/20 to-black/40" />
 
-                <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-12">
-                    <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
+            <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-12">
+                <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
 
-                        {/* LEFT – IMAGE */}
-                        <motion.div
-                            initial={{ opacity: 0, x: -40 }}
-                            whileInView={{ opacity: 1, x: 0 }}
-                            transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-                            viewport={{ once: true }}
-                            className="lg:col-span-5"
-                        >
-                            <div
-                                className="
+                    {/* LEFT – IMAGE */}
+                    <motion.div
+                        initial={{ opacity: 0, x: -40 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+                        viewport={{ once: true }}
+                        className="lg:col-span-5"
+                    >
+                        <div
+                            className="
             relative
             rounded-3xl overflow-hidden
             bg-white/5
@@ -110,56 +177,62 @@ const About = () => {
             backdrop-blur-xl
             shadow-[0_30px_80px_rgba(0,0,0,0.6)]
           "
-                            >
-                                <img
-                                    src={profile}
-                                    alt="Himanshu Kumar"
-                                    className="w-full h-[420px] sm:h-[520px] object-cover grayscale hover:grayscale-0 transition duration-700"
-                                />
-                            </div>
-                        </motion.div>
-
-                        {/* RIGHT – CONTENT */}
-                        <motion.div
-                            initial={{ opacity: 0, x: 40 }}
-                            whileInView={{ opacity: 1, x: 0 }}
-                            transition={{ duration: 0.8, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
-                            viewport={{ once: true }}
-                            className="lg:col-span-7"
                         >
-                            {/* Heading */}
-                            <span className="uppercase tracking-[0.35em] text-xs text-[var(--text-muted)]">
-                                About Me
+                            <img
+                                src={profile}
+                                alt="Himanshu Kumar"
+                                className="w-full h-[420px] sm:h-[520px] object-cover grayscale hover:grayscale-0 transition duration-700"
+                            />
+                        </div>
+                    </motion.div>
+
+                    {/* RIGHT – CONTENT */}
+                    <motion.div
+                        initial={{ opacity: 0, x: 40 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        transition={{ duration: 0.8, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
+                        viewport={{ once: true }}
+                        className="lg:col-span-7"
+                    >
+                        {/* Heading */}
+                        <span className="uppercase tracking-[0.35em] text-xs text-[var(--text-muted)]">
+                            About Me
+                        </span>
+
+                        <h2 className="mt-4 text-4xl md:text-5xl font-extrabold text-[var(--text-primary)]">
+                            Designing & building <br />
+                            <span className="text-[var(--accent-primary)]">
+                                thoughtful web products
                             </span>
+                        </h2>
 
-                            <h2 className="mt-4 text-4xl md:text-5xl font-extrabold text-[var(--text-primary)]">
-                                Designing & building <br />
-                                <span className="text-[var(--accent-primary)]">
-                                    thoughtful web products
-                                </span>
-                            </h2>
+                        <p className="mt-6 text-lg text-[var(--text-secondary)] leading-relaxed max-w-2xl">
+                            I am a Full Stack Developer focused on creating fast, scalable, and
+                            maintainable web applications. I care deeply about clean architecture,
+                            performance, and user experience — not just making things work, but
+                            making them feel right.
+                        </p>
 
-                            <p className="mt-6 text-lg text-[var(--text-secondary)] leading-relaxed max-w-2xl">
-                                I’m a Full Stack Developer focused on creating fast, scalable, and
-                                maintainable web applications. I care deeply about clean architecture,
-                                performance, and user experience — not just making things work, but
-                                making them feel right.
-                            </p>
-
-                            {/* TABS */}
-                            <div className="mt-10">
-                                <div className="
+                        {/* TABS */}
+                        <div className="mt-10">
+                            <div 
+                                className="
     relative
     flex items-center
-    gap-12
+    gap-8
     border-b border-white/10
     pb-4
-  ">
-                                    {tabs.map((tab, index) => (
-                                        <button
-                                            key={tab.id}
-                                            onClick={() => setActiveTab(index)}
-                                            className={`
+  "
+                                role="tablist"
+                            >
+                                {tabs.map((tab, index) => (
+                                    <button
+                                        key={tab.id}
+                                        onClick={() => setActiveTab(index)}
+                                        role="tab"
+                                        aria-selected={activeTab === index}
+                                        aria-controls={`tabpanel-${tab.id}`}
+                                        className={`
           relative
           flex items-center
           h-auto
@@ -169,16 +242,16 @@ const About = () => {
           tracking-wide
           transition-colors duration-300
           ${activeTab === index
-                                                    ? "text-[var(--accent-primary)]"
-                                                    : "text-[var(--text-muted)] hover:text-white"
-                                                }
+                                            ? "text-[var(--accent-primary)]"
+                                            : "text-[var(--text-muted)] hover:text-white"
+                                        }
         `}
-                                        >
-                                            {tab.label}
-                                            {activeTab === index && (
-                                                <motion.span
-                                                    layoutId="aboutTab"
-                                                    className="
+                                    >
+                                        {tab.label}
+                                        {activeTab === index && (
+                                            <motion.span
+                                                layoutId="aboutTab"
+                                                className="
               absolute
               left-1/2
               -bottom-2
@@ -188,14 +261,15 @@ const About = () => {
               rounded-full
               -translate-x-1/2
             "
-                                                />
-                                            )}
-                                        </button>
-                                    ))}
-                                </div>
+                                            />
+                                        )}
+                                    </button>
+                                ))}
+                            </div>
 
-                                {/* TAB CONTENT */}
-                                <div className="
+                            {/* TAB CONTENT */}
+                            <div
+                                className="
     mt-8
     rounded-2xl
     bg-white/5
@@ -204,27 +278,30 @@ const About = () => {
     p-6
     text-[var(--text-secondary)]
     shadow-lg
-  ">
-                                    <AnimatePresence mode="wait">
-                                        <motion.div
-                                            key={activeTab}
-                                            initial={{ opacity: 0, y: 10 }}
-                                            animate={{ opacity: 1, y: 0 }}
-                                            exit={{ opacity: 0, y: -10 }}
-                                            transition={{ duration: 0.3 }}
-                                        >
-                                            {tabs[activeTab].content}
-                                        </motion.div>
-                                    </AnimatePresence>
-                                </div>
+  "
+                                role="tabpanel"
+                                id={`tabpanel-${tabs[activeTab].id}`}
+                            >
+                                <AnimatePresence mode="wait">
+                                    <motion.div
+                                        key={activeTab}
+                                        initial={{ opacity: 0, y: 10 }}
+                                        animate={{ opacity: 1, y: 0 }}
+                                        exit={{ opacity: 0, y: -10 }}
+                                        transition={{ duration: 0.3 }}
+                                    >
+                                        {tabs[activeTab].content}
+                                    </motion.div>
+                                </AnimatePresence>
                             </div>
-                        </motion.div>
-                    </div>
+                        </div>
+                    </motion.div>
                 </div>
-            </section>
+            </div>
+        </section>
 
-        </>
     )
 }
 
 export default About
+

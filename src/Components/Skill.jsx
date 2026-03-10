@@ -78,7 +78,11 @@ const skills = [
 const Skills = () => {
     return (
         <section className="relative w-full py-32">
-            <div className="max-w-7xl mx-auto px-6 md:px-12">
+            {/* Background */}
+            <div className="absolute inset-0 bg-[var(--bg-primary)]" />
+            <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-black/40" />
+
+            <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-12">
 
                 {/* SECTION HEADER */}
                 <motion.div
@@ -94,7 +98,7 @@ const Skills = () => {
                     <h2 className="mt-4 text-4xl md:text-5xl font-extrabold text-[var(--text-primary)]">
                         Skills & Technologies
                     </h2>
-                    <p className="mt-6 text-[var(--text-secondary)]">
+                    <p className="mt-6 text-lg text-[var(--text-secondary)]">
                         Tools and technologies I use to build scalable,
                         performant, and maintainable web applications.
                     </p>
@@ -109,7 +113,7 @@ const Skills = () => {
                             whileInView={{ opacity: 1, y: 0 }}
                             transition={{ delay: index * 0.1, duration: 0.6 }}
                             viewport={{ once: true }}
-                            whileHover={{ y: -6 }}
+                            whileHover={{ y: -8 }}
                             className="
                 relative
                 rounded-3xl
@@ -119,6 +123,7 @@ const Skills = () => {
                 p-6
                 shadow-[0_30px_80px_rgba(0,0,0,0.5)]
                 overflow-hidden
+                group
               "
                         >
                             {/* GRADIENT GLOW */}
@@ -126,7 +131,8 @@ const Skills = () => {
                                 className={`
                   absolute -top-24 -right-24 w-48 h-48
                   bg-gradient-to-br ${skill.accent}
-                  opacity-20 blur-3xl
+                  opacity-0 group-hover:opacity-20
+                  blur-3xl transition-opacity duration-500
                 `}
                             />
 
@@ -136,7 +142,7 @@ const Skills = () => {
                             </div>
 
                             {/* TITLE */}
-                            <h3 className="relative mt-4 text-lg font-semibold text-[var(--text-primary)]">
+                            <h3 className="relative mt-4 text-lg font-semibold text-[var(--text-primary)] group-hover:text-white transition-colors">
                                 {skill.title}
                             </h3>
 
@@ -158,3 +164,4 @@ const Skills = () => {
 };
 
 export default Skills;
+

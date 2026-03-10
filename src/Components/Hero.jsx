@@ -1,6 +1,6 @@
 import { motion, useScroll, useTransform } from "framer-motion";
 import bg from "../images/hero-bg.jpg"; // dark, minimal background
-import Heading from "../Components/HeadingText"
+import TypingText from "../Components/HeadingText";
 
 const Hero = () => {
     const { scrollY } = useScroll();
@@ -73,7 +73,7 @@ const Hero = () => {
               text-[var(--text-muted)]
             "
                     >
-                        <Heading />
+                        <TypingText />
                     </motion.span>
 
                     {/* HEADLINE */}
@@ -110,7 +110,7 @@ const Hero = () => {
                         <span className="text-white font-medium">
                             Himanshu Kumar
                         </span>{" "}
-                        — focused on performance, clarity, and detail.
+                        — focused on performance, automation, clarity, and detail.
                     </motion.p>
                 </div>
             </motion.div>

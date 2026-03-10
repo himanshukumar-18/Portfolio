@@ -1,7 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 @import "tailwindcss";
 
-
 :root {
     /* fonts */
     --font-body: "Poppins", sans-serif, system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
@@ -64,10 +63,80 @@
 
 html {
     scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    scroll-padding-top: 100px;
+}
+
+/* Premium smooth scrolling */
+@media (prefers-reduced-motion: no-preference) {
+    html {
+        scroll-behavior: smooth;
+    }
+    
+    body {
+        /* Smooth scrolling with momentum */
+        overflow-y: scroll;
+        -webkit-overflow-scrolling: touch;
+    }
+    
+    /* Smooth scroll anchor links */
+    a[href^="#"] {
+        scroll-behavior: smooth;
+    }
+    
+    /* Section transitions */
+    section {
+        will-change: transform, opacity;
+    }
 }
 
 body {
     font-family: var(--font-body);
     background-color: var(--bg-primary);
     color: var(--text-primary);
+    overflow-x: hidden;
 }
+
+/* Selection color */
+::selection {
+    background-color: var(--accent-primary);
+    color: white;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--bg-primary);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--text-muted);
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--accent-primary);
+}
+
+/* Focus styles for accessibility */
+*:focus-visible {
+    outline: 2px solid var(--accent-primary);
+    outline-offset: 2px;
+}
+
+/* Smooth transitions for theme changes */
+* {
+    transition-property: background-color, border-color;
+    transition-timing-function: ease;
+    transition-duration: 0.15s;
+}
+
+/* Remove transition on page load for smoother initial render */
+.preload * {
+    transition: none !important;
+}
+

@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Projectcard from "./Projectcard";
 
 const projects = [
@@ -30,24 +30,51 @@ const projects = [
         improvement:
             "Enhanced visual hierarchy and improved page load speed.",
     },
+    {
+        title: "E-Commerce Store",
+        image:
+            "https://images.pexels.com/photos/3471369/pexels-photo-3471369.jpeg",
+        live: "#",
+        github: "#",
+        problem:
+            "Business needed an online store to sell products with secure payments.",
+        role:
+            "Built full-stack e-commerce solution with shopping cart and checkout.",
+        tech: ["React", "Node.js", "MongoDB", "Express"],
+        improvement:
+            "Implemented payment gateway and improved site performance by 40%.",
+    },
 ];
 
 const Work = () => {
     const [activeIndex, setActiveIndex] = useState(null);
 
+    // Close modal on escape key
+    useEffect(() => {
+        const handleEscape = (e) => {
+            if (e.key === "Escape") setActiveIndex(null);
+        };
+        window.addEventListener("keydown", handleEscape);
+        return () => window.removeEventListener("keydown", handleEscape);
+    }, []);
+
     return (
-        <section id="Work" className="w-full py-32">
-            <div className="max-w-7xl mx-auto px-6 md:px-12">
+        <section id="Work" className="w-full py-32 relative">
+            {/* Background gradient */}
+            <div className="absolute inset-0 bg-[var(--bg-secondary)]" />
+            <div className="absolute inset-0 bg-gradient-to-b from-transparent via-black/20 to-black/40" />
+            
+            <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-12">
                 {/* HEADER */}
                 <div className="text-center max-w-3xl mx-auto">
                     <span className="uppercase tracking-[0.35em] text-xs text-[var(--text-muted)]">
                         Portfolio
                     </span>
-                    <h2 className="mt-4 text-4xl md:text-5xl font-extrabold text-white">
+                    <h2 className="mt-4 text-4xl md:text-5xl font-extrabold text-[var(--text-primary)]">
                         Selected{" "}
                         <span className="text-[var(--accent-primary)]">Projects</span>
                     </h2>
-                    <p className="mt-6 text-lg text-white/70">
+                    <p className="mt-6 text-lg text-[var(--text-secondary)]">
                         Real-world projects that demonstrate my development approach.
                     </p>
                 </div>
@@ -70,3 +97,4 @@ const Work = () => {
 };
 
 export default Work;
+

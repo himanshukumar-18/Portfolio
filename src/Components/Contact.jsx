@@ -24,7 +24,7 @@ const Contact = () => {
                             className="lg:col-span-6"
                         >
                             <span className="uppercase tracking-[0.35em] text-xs text-[var(--text-muted)]">
-                                Let’s Work Together
+                                Lets Work Together
                             </span>
 
                             <h2 className="mt-4 text-4xl md:text-5xl font-extrabold text-[var(--text-primary)]">
@@ -32,18 +32,32 @@ const Contact = () => {
                             </h2>
 
                             <p className="mt-6 text-lg text-[var(--text-secondary)] max-w-xl">
-                                I’m open to full-time roles and freelance opportunities.
-                                If you’re looking for someone who cares about quality,
-                                performance, and clarity — let’s talk.
+                                I am open to full-time roles and freelance opportunities.
+                                If you are looking for someone who cares about quality,
+                                performance, and clarity — lets talk.
                             </p>
 
                             {/* CONTACT INFO */}
                             <div className="mt-6 space-y-2 text-[var(--text-secondary)]">
                                 <p>
-                                    📞 <span className="text-white">+91 6201030273</span>
+                                    <span className="text-white">📞</span>{" "}
+                                    <a 
+                                        href="tel:+916201030273" 
+                                        className="hover:text-[var(--accent-primary)] transition-colors"
+                                        aria-label="Call +91 6201030273"
+                                    >
+                                        +91 6201030273
+                                    </a>
                                 </p>
                                 <p>
-                                    ✉️ <span className="text-white">rajh5343@gmail.com</span>
+                                    <span className="text-white">✉️</span>{" "}
+                                    <a 
+                                        href="mailto:rajh5343@gmail.com" 
+                                        className="hover:text-[var(--accent-primary)] transition-colors"
+                                        aria-label="Email rajh5343@gmail.com"
+                                    >
+                                        rajh5343@gmail.com
+                                    </a>
                                 </p>
                             </div>
 
@@ -60,26 +74,6 @@ const Contact = () => {
           "
                             >
                                 <HireFrom />
-
-                                {/* SUBMIT BUTTON */}
-                                <motion.button
-                                    whileHover={{ scale: 1.04 }}
-                                    whileTap={{ scale: 0.96 }}
-                                    className="
-              mt-6
-              w-full
-              py-4
-              rounded-2xl
-              bg-[var(--accent-primary)]
-              text-white
-              font-medium
-              shadow-[var(--accent-glow)]
-              hover:opacity-90
-              transition
-            "
-                                >
-                                    Send Message
-                                </motion.button>
                             </div>
                         </motion.div>
 
@@ -120,3 +114,4 @@ const Contact = () => {
 }
 
 export default Contact
+

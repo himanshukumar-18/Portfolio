@@ -6,10 +6,10 @@ const BackToTop = () => {
 
     useEffect(() => {
         const onScroll = () => {
-            setVisible(window.scrollY > 400);
+            setVisible(window.scrollY > 500);
         };
 
-        window.addEventListener("scroll", onScroll);
+        window.addEventListener("scroll", onScroll, { passive: true });
         return () => window.removeEventListener("scroll", onScroll);
     }, []);
 
@@ -36,13 +36,11 @@ const BackToTop = () => {
             w-12 h-12
             flex items-center justify-center
             rounded-full
-            bg-white/10
-            backdrop-blur-xl
-            border border-white/20
+            bg-[var(--accent-primary)]
             text-white
-            shadow-[0_0_0_0_var(--accent-primary)]
-            hover:shadow-[0_0_20px_var(--accent-primary)]
-            transition
+            shadow-[var(--accent-glow)]
+            hover:shadow-[0_0_30px_var(--accent-primary)]
+            transition-all duration-300
           "
                     aria-label="Back to top"
                 >
@@ -53,7 +51,7 @@ const BackToTop = () => {
                         fill="none"
                         viewBox="0 0 24 24"
                         stroke="currentColor"
-                        strokeWidth="1.8"
+                        strokeWidth="2"
                     >
                         <path
                             strokeLinecap="round"
@@ -68,3 +66,4 @@ const BackToTop = () => {
 };
 
 export default BackToTop;
+

@@ -14,6 +14,10 @@ const links = [
 const Nav = () => {
   const [open, setOpen] = useState(false);
 
+  const handleLinkClick = () => {
+    setOpen(false);
+  };
+
   return (
     <motion.header
       initial={{ y: -24, opacity: 0 }}
@@ -41,42 +45,48 @@ const Nav = () => {
             text-[var(--text-primary)]
             font-semibold text-base sm:text-lg
             tracking-wide
+            hover:text-[var(--accent-primary)]
+            transition-colors
           "
+          aria-label="Himanshu Kumar - Home"
         >
           Himanshu<span className="text-[var(--accent-primary)]">.</span>
         </a>
 
         {/* DESKTOP LINKS */}
-        <ul className="hidden md:flex items-center gap-8">
-          {links.map((item, i) => (
-            <li key={i} className="relative group">
-              <a
-                href={item.href}
-                target={item.external ? "_blank" : "_self"}
-                className="
-                  text-sm
-                  text-[var(--text-secondary)]
-                  transition-colors duration-300
-                  group-hover:text-[var(--text-primary)]
-                "
-              >
-                {item.name}
-              </a>
+        <nav className="hidden md:flex" aria-label="Main navigation">
+          <ul className="flex items-center gap-8">
+            {links.map((item, i) => (
+              <li key={i} className="relative group">
+                <a
+                  href={item.href}
+                  target={item.external ? "_blank" : "_self"}
+                  rel={item.external ? "noopener noreferrer" : undefined}
+                  className="
+                    text-sm
+                    text-[var(--text-secondary)]
+                    transition-colors duration-300
+                    group-hover:text-[var(--text-primary)]
+                  "
+                >
+                  {item.name}
+                </a>
 
-              {/* Minimal active dot */}
-              <span
-                className="
-                  absolute left-1/2 -bottom-2
-                  h-1 w-1 rounded-full
-                  bg-[var(--accent-primary)]
-                  opacity-0 group-hover:opacity-100
-                  -translate-x-1/2
-                  transition-opacity
-                "
-              />
-            </li>
-          ))}
-        </ul>
+                {/* Minimal active dot */}
+                <span
+                  className="
+                    absolute left-1/2 -bottom-2
+                    h-1 w-1 rounded-full
+                    bg-[var(--accent-primary)]
+                    opacity-0 group-hover:opacity-100
+                    -translate-x-1/2
+                    transition-opacity
+                  "
+                />
+              </li>
+            ))}
+          </ul>
+        </nav>
 
         {/* RIGHT SIDE */}
         <div className="hidden md:flex items-center gap-4">
@@ -84,31 +94,39 @@ const Nav = () => {
           <a
             href="https://github.com/himanshukumar-18"
             target="_blank"
+            rel="noopener noreferrer"
+            aria-label="GitHub Profile"
             className="
               text-[var(--text-muted)]
               hover:text-[var(--text-primary)]
+              hover:text-[var(--accent-primary)]
               transition-colors
             "
           >
-            <i className="fa-brands fa-github"></i>
+            <i className="fa-brands fa-github text-lg" aria-hidden="true" />
           </a>
 
           <a
             href="https://www.linkedin.com/in/himanshu-kumar-8b5845313/"
             target="_blank"
+            rel="noopener noreferrer"
+            aria-label="LinkedIn Profile"
             className="
               text-[var(--text-muted)]
               hover:text-[var(--text-primary)]
+              hover:text-[var(--accent-primary)]
               transition-colors
             "
           >
-            <i className="fa-brands fa-linkedin-in"></i>
+            <i className="fa-brands fa-linkedin-in text-lg" aria-hidden="true" />
           </a>
 
           {/* CV BUTTON */}
           <a
             href={cv}
             target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Download CV"
             className="
               px-5 py-2
               rounded-xl text-sm
@@ -133,9 +151,14 @@ const Nav = () => {
             md:hidden
             text-[var(--text-primary)]
             text-xl
+            p-2
+            hover:text-[var(--accent-primary)]
+            transition-colors
           "
+          aria-label={open ? "Close menu" : "Open menu"}
+          aria-expanded={open}
         >
-          <i className={open ? "fa-solid fa-xmark" : "fa-solid fa-bars"} />
+          <i className={open ? "fa-solid fa-xmark" : "fa-solid fa-bars"} aria-hidden="true" />
         </button>
       </div>
 
@@ -157,40 +180,45 @@ const Nav = () => {
               shadow-[var(--glass-shadow)]
             "
           >
-            <ul className="flex flex-col p-6 gap-5">
-              {links.map((item, i) => (
-                <li key={i}>
-                  <a
-                    href={item.href}
-                    target={item.external ? "_blank" : "_self"}
-                    onClick={() => setOpen(false)}
-                    className="
-                      text-sm
-                      text-[var(--text-secondary)]
-                      hover:text-[var(--accent-primary)]
-                      transition-colors
-                    "
-                  >
-                    {item.name}
-                  </a>
-                </li>
-              ))}
+            <nav aria-label="Mobile navigation">
+              <ul className="flex flex-col p-6 gap-5">
+                {links.map((item, i) => (
+                  <li key={i}>
+                    <a
+                      href={item.href}
+                      target={item.external ? "_blank" : "_self"}
+                      rel={item.external ? "noopener noreferrer" : undefined}
+                      onClick={handleLinkClick}
+                      className="
+                        text-sm
+                        text-[var(--text-secondary)]
+                        hover:text-[var(--accent-primary)]
+                        transition-colors
+                      "
+                    >
+                      {item.name}
+                    </a>
+                  </li>
+                ))}
 
-              <a
-                href={cv}
-                target="_blank"
-                className="
-                  mt-2 py-3 text-center
-                  rounded-xl
-                  bg-[var(--accent-primary)]
-                  text-white
-                  hover:opacity-90
-                  transition
-                "
-              >
-                Download CV
-              </a>
-            </ul>
+                <a
+                  href={cv}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={handleLinkClick}
+                  className="
+                    mt-2 py-3 text-center
+                    rounded-xl
+                    bg-[var(--accent-primary)]
+                    text-white
+                    hover:opacity-90
+                    transition
+                  "
+                >
+                  Download CV
+                </a>
+              </ul>
+            </nav>
           </motion.div>
         )}
       </AnimatePresence>
@@ -199,3 +227,4 @@ const Nav = () => {
 };
 
 export default Nav;
+
