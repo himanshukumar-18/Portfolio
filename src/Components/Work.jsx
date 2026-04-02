@@ -1,48 +1,20 @@
 import { useState, useEffect } from "react";
 import Projectcard from "./Projectcard";
+import thumbnail from "../images/thumbnail.png"
 
 const projects = [
     {
-        title: "Blogging Platform",
-        image:
-            "https://images.pexels.com/photos/3178818/pexels-photo-3178818.jpeg",
-        live: "https://frontenddev-himanshu.github.io/Blogging-Web",
-        github: "https://github.com/frontenddev-himanshu/Blogging-Web",
+        title: "SkillForge",
+        image: thumbnail,
+        live: "https://skill-fore.vercel.app/",
+        github: "https://github.com/himanshukumar-18/SkillFore",
         problem:
-            "Users needed a clean, fast platform to read and publish blogs.",
+            "Traditional learning platforms lack personalized skill development tracking and interactive progress monitoring. Users struggle to maintain consistent learning habits and track their skill improvement over time.",
         role:
-            "Designed and developed the complete frontend with focus on readability.",
-        tech: ["React", "CSS", "JavaScript"],
+            "Developed a comprehensive skill development platform with interactive learning modules, progress tracking, and personalized dashboards. Built full-stack application with modern UI/UX, real-time progress analytics, and gamified learning experience.",
+        tech: ["React", "Node.js", "MongoDB", "Express", "Tailwind CSS", "Chart.js", "JWT", "Socket.io"],
         improvement:
-            "Improved mobile UX and optimized layout for better performance.",
-    },
-    {
-        title: "Hotel Website",
-        image:
-            "https://images.pexels.com/photos/53464/sheraton-palace-hotel-lobby-architecture-san-francisco-53464.jpeg",
-        live: "https://devhimanshukr.github.io/Canary-Inn/",
-        github: "https://github.com/devhimanshukr/Canary-Inn",
-        problem:
-            "Hotel needed a modern website to showcase rooms and services.",
-        role:
-            "Built responsive UI and structured content for easy navigation.",
-        tech: ["HTML", "CSS", "JavaScript"],
-        improvement:
-            "Enhanced visual hierarchy and improved page load speed.",
-    },
-    {
-        title: "E-Commerce Store",
-        image:
-            "https://images.pexels.com/photos/3471369/pexels-photo-3471369.jpeg",
-        live: "#",
-        github: "#",
-        problem:
-            "Business needed an online store to sell products with secure payments.",
-        role:
-            "Built full-stack e-commerce solution with shopping cart and checkout.",
-        tech: ["React", "Node.js", "MongoDB", "Express"],
-        improvement:
-            "Implemented payment gateway and improved site performance by 40%.",
+            "Implemented advanced analytics dashboard with visual progress charts, real-time notifications, and adaptive learning recommendations. Added offline capability and improved mobile responsiveness by 60%.",
     },
 ];
 

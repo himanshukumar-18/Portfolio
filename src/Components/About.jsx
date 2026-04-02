@@ -25,7 +25,7 @@ const About = () => {
                     <div>
                         <h3 className="font-bold text-[var(--accent-primary)] text-sm uppercase tracking-wide">Back-end</h3>
                         <div className="mt-2 flex flex-wrap gap-2">
-                            {["Node.js","API", "Python(basic)"].map((skill) => (
+                            {["Node.js","REST API", "Python(basic)"].map((skill) => (
                                 <span key={skill} className="px-3 py-1 text-xs rounded-full bg-white/10 text-[var(--text-secondary)]">
                                     {skill}
                                 </span>
@@ -74,20 +74,6 @@ const About = () => {
                         <h3 className="font-bold text-[var(--text-primary)]">Web Development Course</h3>
                         <p className="text-sm text-[var(--text-muted)] mt-1">
                             Arena Animation Hazaribag (6 months With Certificate)
-                        </p>
-                    </div>
-
-                    <div className="border-l-2 border-[var(--accent-primary)] pl-4">
-                        <h3 className="font-bold text-[var(--text-primary)]">Higher Secondary Education</h3>
-                        <p className="text-sm text-[var(--text-muted)] mt-1">
-                            Barhi Inter College Barhi 57% (JAC 2022 - 2024)
-                        </p>
-                    </div>
-
-                    <div className="border-l-2 border-[var(--accent-primary)] pl-4">
-                        <h3 className="font-bold text-[var(--text-primary)]">Secondary Education</h3>
-                        <p className="text-sm text-[var(--text-muted)] mt-1">
-                            Vivekananda Central School Hazaribag 60% (CBSE 2010 - 2022)
                         </p>
                     </div>
                 </div>
