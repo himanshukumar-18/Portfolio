@@ -154,7 +154,7 @@ const Hero = () => {
             <span className="text-white font-medium">
                 Himanshu Kumar
             </span>{" "}
-            - a MERN Stack Developer focused on building responsive, scalable, and high-performance web applications.
+            - a Full Stack Developer focused on building responsive, scalable, and high-performance web applications.
         </motion.p>
     </div>
 
