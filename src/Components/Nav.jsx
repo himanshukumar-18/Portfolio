@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import cv from "../pdf/Cv.pdf";
 import cer from "../pdf/ArenaCert.pdf";
 
 const links = [
@@ -11,7 +10,10 @@ const links = [
   { name: "Contact", href: "#Contact" },
 ];
 
+
 const Nav = () => {
+  
+
   const [open, setOpen] = useState(false);
 
   const handleLinkClick = () => {
@@ -28,7 +30,7 @@ const Nav = () => {
       {/* Floating Glass Bar */}
       <div
         className="
-          mx-auto max-w-7xl
+          mx-auto max-w-6xl
           px-5 sm:px-6 py-3
           flex items-center justify-between
           rounded-2xl
@@ -88,62 +90,6 @@ const Nav = () => {
           </ul>
         </nav>
 
-        {/* RIGHT SIDE */}
-        <div className="hidden md:flex items-center gap-4">
-          {/* Social Icons */}
-          <a
-            href="https://github.com/himanshukumar-18"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="GitHub Profile"
-            className="
-              text-[var(--text-muted)]
-              hover:text-[var(--text-primary)]
-              hover:text-[var(--accent-primary)]
-              transition-colors
-            "
-          >
-            <i className="fa-brands fa-github text-lg" aria-hidden="true" />
-          </a>
-
-          <a
-            href="https://www.linkedin.com/in/himanshu-kumar-8b5845313/"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="LinkedIn Profile"
-            className="
-              text-[var(--text-muted)]
-              hover:text-[var(--text-primary)]
-              hover:text-[var(--accent-primary)]
-              transition-colors
-            "
-          >
-            <i className="fa-brands fa-linkedin-in text-lg" aria-hidden="true" />
-          </a>
-
-          {/* CV BUTTON */}
-          <a
-            href={cv}
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="Download CV"
-            className="
-              px-5 py-2
-              rounded-xl text-sm
-              text-[var(--btn-text)]
-              bg-[var(--btn-bg)]
-              border border-[var(--glass-border)]
-              backdrop-blur-lg
-              hover:bg-[var(--btn-hover)]
-              hover:border-[var(--accent-primary)]
-              hover:shadow-[var(--accent-glow)]
-              transition-all duration-300
-            "
-          >
-            CV
-          </a>
-        </div>
-
         {/* MOBILE MENU ICON */}
         <button
           onClick={() => setOpen(!open)}
@@ -200,23 +146,6 @@ const Nav = () => {
                     </a>
                   </li>
                 ))}
-
-                <a
-                  href={cv}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  onClick={handleLinkClick}
-                  className="
-                    mt-2 py-3 text-center
-                    rounded-xl
-                    bg-[var(--accent-primary)]
-                    text-white
-                    hover:opacity-90
-                    transition
-                  "
-                >
-                  Download CV
-                </a>
               </ul>
             </nav>
           </motion.div>
