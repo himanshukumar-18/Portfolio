@@ -12,6 +12,16 @@ const socials = [
         href: "https://github.com/himanshukumar-18",
         icon: "fa-brands fa-github",
     },
+    {
+        name: "Youtube",
+        href: "https://www.youtube.com/channel/UCrwrS_DH8Ny3FWzNk-7V6Ow",
+        icon: "fa-brands fa-youtube",
+    },
+    {
+        name: "Instagram",
+        href: "https://www.instagram.com/himanshucodes.ai/",
+        icon: "fa-brands fa-instagram",
+    },
 ];
 
 const SocialRail = () => {

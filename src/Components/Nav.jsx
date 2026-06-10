@@ -1,18 +1,16 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import cer from "../pdf/ArenaCert.pdf";
 
 const links = [
   { name: "Home", href: "#Home" },
   { name: "About", href: "#About" },
   { name: "Work", href: "#Work" },
-  { name: "Certificate", href: cer, external: true },
   { name: "Contact", href: "#Contact" },
 ];
 
 
 const Nav = () => {
-  
+
 
   const [open, setOpen] = useState(false);
 
@@ -91,6 +89,32 @@ const Nav = () => {
         </nav>
 
         {/* MOBILE MENU ICON */}
+        <button>
+          <a
+            href="mailto:rajh5343@gmail.com"
+            className="
+      hidden sm:flex
+      items-center
+      gap-2
+      px-5 py-2.5
+      rounded-full
+      bg-[var(--accent-primary)]
+      text-white
+      text-sm
+      font-medium
+      shadow-lg
+      shadow-pink-500/20
+      hover:scale-105
+      hover:shadow-pink-500/40
+      transition-all
+      duration-300
+    "
+          >
+            Let's Talk
+            <i className="fa-solid fa-arrow-right text-xs"></i>
+          </a>
+        </button>
+
         <button
           onClick={() => setOpen(!open)}
           className="
@@ -147,6 +171,29 @@ const Nav = () => {
                   </li>
                 ))}
               </ul>
+              <div className="px-6 pb-6">
+                <a
+                   href="mailto:rajh5343@gmail.com"
+                  onClick={handleLinkClick}
+                  className="
+      w-full
+      flex
+      justify-center
+      items-center
+      gap-2
+      py-3
+      rounded-xl
+      bg-[var(--accent-primary)]
+      text-white
+      font-medium
+      shadow-lg
+      shadow-pink-500/20
+    "
+                >
+                  Let's Talk
+                  <i className="fa-solid fa-arrow-right"></i>
+                </a>
+              </div>
             </nav>
           </motion.div>
         )}
