@@ -24,7 +24,7 @@ const skills = [
     {
         title: "Back-end",
         accent: "from-violet-500 to-indigo-500",
-        items: ["Node.js", "Express.js", "REST API"],
+        items: ["Node.js", "Express.js", "REST API", "Python", "Django"],
         icon: (
             <svg viewBox="0 0 24 24" className="w-7 h-7">
                 <path
@@ -38,7 +38,7 @@ const skills = [
     {
         title: "Database",
         accent: "from-emerald-500 to-teal-500",
-        items: ["MongoDB", "MySQL"],
+        items: ["MongoDB", "MySQL", "PostgreSQL"],
         icon: (
             <svg viewBox="0 0 24 24" className="w-7 h-7">
                 <ellipse
@@ -62,7 +62,7 @@ const skills = [
     {
         title: "Version Control",
         accent: "from-cyan-500 to-sky-500",
-        items: ["Git", "GitHub"],
+        items: ["Git", "GitHub", "GitLab", "Postman"],
         icon: (
             <svg viewBox="0 0 24 24" className="w-7 h-7">
                 <path
@@ -98,9 +98,8 @@ const Skills = () => {
                     <h2 className="mt-4 text-4xl md:text-5xl font-extrabold text-[var(--text-primary)]">
                         Skills & Technologies
                     </h2>
-                    <p className="mt-6 text-lg text-[var(--text-secondary)]">
-                        Tools and technologies I use to build scalable,
-                        performant, and maintainable web applications.
+                    <p className="mt-6 text-lg text-[var(--tex  t-secondary)]">
+                        A collection of technologies, frameworks, and tools I use to transform ideas into production-ready applications.
                     </p>
                 </motion.div>
 
@@ -108,54 +107,148 @@ const Skills = () => {
                 <div className="mt-20 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
                     {skills.map((skill, index) => (
                         <motion.div
-                            key={index}
-                            initial={{ opacity: 0, y: 40 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            transition={{ delay: index * 0.1, duration: 0.6 }}
-                            viewport={{ once: true }}
-                            whileHover={{ y: -8 }}
-                            className="
-                relative
-                rounded-3xl
-                bg-white/5
-                backdrop-blur-2xl
-                border border-white/10
-                p-6
-                shadow-[0_30px_80px_rgba(0,0,0,0.5)]
-                overflow-hidden
-                group
-              "
-                        >
-                            {/* GRADIENT GLOW */}
-                            <div
-                                className={`
-                  absolute -top-24 -right-24 w-48 h-48
-                  bg-gradient-to-br ${skill.accent}
-                  opacity-0 group-hover:opacity-20
-                  blur-3xl transition-opacity duration-500
-                `}
-                            />
+  key={index}
+  initial={{ opacity: 0, y: 60 }}
+  whileInView={{ opacity: 1, y: 0 }}
+  viewport={{ once: true }}
+  transition={{
+    duration: 0.7,
+    delay: index * 0.12,
+  }}
+  whileHover={{
+    y: -12,
+    scale: 1.02,
+  }}
+  className="
+    relative
+    overflow-hidden
+    rounded-3xl
+    bg-white/5
+    backdrop-blur-2xl
+    border border-white/10
+    p-6
+    group
+  "
+>
+  {/* Animated Border Beam */}
+  <motion.div
+    animate={{
+      x: ["-100%", "250%"],
+    }}
+    transition={{
+      duration: 3,
+      repeat: Infinity,
+      ease: "linear",
+    }}
+    className="
+      absolute
+      top-0
+      left-0
+      h-[2px]
+      w-24
+      bg-[var(--accent-primary)]
+      blur-[1px]
+    "
+  />
 
-                            {/* ICON */}
-                            <div className="relative text-[var(--accent-primary)]">
-                                {skill.icon}
-                            </div>
+  {/* Hover Glow */}
+  <div
+    className="
+      absolute
+      inset-0
+      opacity-0
+      group-hover:opacity-100
+      transition-opacity
+      duration-500
+      bg-[radial-gradient(circle_at_top,var(--accent-primary),transparent_60%)]
+      blur-3xl
+    "
+  />
 
-                            {/* TITLE */}
-                            <h3 className="relative mt-4 text-lg font-semibold text-[var(--text-primary)] group-hover:text-white transition-colors">
-                                {skill.title}
-                            </h3>
+  {/* Floating Icon */}
+  <motion.div
+    whileHover={{
+      rotate: 8,
+      scale: 1.15,
+    }}
+    className="
+      relative
+      text-[var(--accent-primary)]
+      mb-6
+    "
+  >
+    {skill.icon}
+  </motion.div>
 
-                            {/* SKILL LIST */}
-                            <ul className="relative mt-4 space-y-2 text-sm text-[var(--text-secondary)]">
-                                {skill.items.map((item, i) => (
-                                    <li key={i} className="flex items-center gap-2">
-                                        <span className="w-1.5 h-1.5 rounded-full bg-[var(--accent-primary)]" />
-                                        {item}
-                                    </li>
-                                ))}
-                            </ul>
-                        </motion.div>
+  {/* Title */}
+  <h3
+    className="
+      relative
+      text-xl
+      font-semibold
+      text-[var(--text-primary)]
+      mb-5
+    "
+  >
+    {skill.title}
+  </h3>
+
+  {/* Skills */}
+  <ul className="relative space-y-3">
+    {skill.items.map((item, i) => (
+      <motion.li
+        key={i}
+        initial={{ opacity: 0, x: -20 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        transition={{
+          delay: i * 0.08,
+        }}
+        className="
+          flex
+          items-center
+          gap-3
+          text-[var(--text-secondary)]
+        "
+      >
+        <motion.span
+          animate={{
+            scale: [1, 1.4, 1],
+          }}
+          transition={{
+            repeat: Infinity,
+            duration: 2,
+            delay: i * 0.2,
+          }}
+          className="
+            w-2
+            h-2
+            rounded-full
+            bg-[var(--accent-primary)]
+          "
+        />
+
+        {item}
+      </motion.li>
+    ))}
+  </ul>
+
+  {/* Bottom Animated Line */}
+  <motion.div
+    initial={{ width: 0 }}
+    whileInView={{ width: "100%" }}
+    transition={{
+      duration: 1.2,
+      delay: 0.3,
+    }}
+    className="
+      absolute
+      bottom-0
+      left-0
+      h-[1px]
+      bg-[var(--accent-primary)]
+    "
+  />
+</motion.div>
                     ))}
                 </div>
             </div>

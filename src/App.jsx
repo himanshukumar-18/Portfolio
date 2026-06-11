@@ -8,6 +8,9 @@ import Skills from "./Components/Skill";
 import Work from "./Components/Work";
 import BackToTop from "./Components/BackToTop";
 import SocialRail from "./Components/SocialRail";
+import Education from "./Components/Education";
+import Achievements from "./Components/Achievements";
+import Leetcode from "./Components/Leetcode";
 
 function App() {
 
@@ -35,8 +38,17 @@ function App() {
       {/* skills section */}
       <Skills />
 
+      {/* education section */}
+      <Education />
+
       {/* work section */}
       <Work />
+
+      {/* Achievements & Certifications */}
+      <Achievements/>
+
+      {/* Leetcode section */}
+      <Leetcode />
 
       {/* hire me */}
       <Contact />
