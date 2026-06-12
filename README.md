@@ -1,141 +1,77 @@
-# Himanshu Kumar - Developer Portfolio
+# Himanshu Kumar — Developer Portfolio
 
-A modern, responsive developer portfolio showcasing my work and skills. Built with React, featuring smooth animations, glass UI design, and a focus on performance and user experience.
+A modern, responsive developer portfolio built with **React + Vite**, featuring **Framer Motion** animations, a **glassmorphism** UI style (backdrop blur), and smooth anchor scrolling.
 
-![Portfolio Preview](./public/portfolio-preview.png)
+## Live sections (from the site)
 
-## ✨ Features
+- **Home** (hero)
+- **About**
+- **Education**
+- **Skills**
+- **Work** (personal + freelance projects)
+- **Achievements** (certifications)
+- **LeetCode** (DSA journey + topics)
+- **Contact** (availability + hire/collaboration CTA)
+- **Footer** (social links + quick links)
 
-- **Responsive Design**: Optimized for all devices and screen sizes
-- **Smooth Animations**: Powered by Framer Motion for cinematic transitions
-- **Glass UI Design**: Modern aesthetic with backdrop blur effects
-- **Interactive Components**: Engaging user interactions and hover effects
-- **Performance Optimized**: Fast loading with Vite build system
-- **SEO Friendly**: Proper meta tags and semantic HTML
-- **Accessibility**: ARIA labels and keyboard navigation support
+## Tech stack
 
-## 🛠️ Tech Stack
+- **React 18**
+- **Vite**
+- **Tailwind CSS (via @tailwindcss/vite)**
+- **Framer Motion** (scroll-driven effects + on-view animations)
+- **Font Awesome** (icons)
 
-### Frontend
-- **React 18** - Modern React with hooks and concurrent features
-- **Vite** - Fast build tool and development server
-- **Tailwind CSS** - Utility-first CSS framework
-- **Framer Motion** - Animation library for React
+## Notable implemented content
 
-### UI/UX
-- **FontAwesome** - Icon library for consistent iconography
-- **Custom CSS Variables** - Theme system for consistent styling
-- **Glass Morphism** - Modern UI design pattern
+- **Smooth premium scroll for anchor links** in `src/main.jsx`
+- **Projects** defined directly in `src/Components/Work.jsx`, including:
+  - Personal: **SkillForge**
+  - Freelance/client work: **The Taste Catering**, **Skills Nation**, **Udayan Public School**
+- **Certifications** rendered from `src/Components/Achievements.jsx` using:
+  - `src/images/arena.jpg`
+  - `src/pdf/ArenaCert.pdf`
+- **LeetCode profile link** in `src/Components/Leetcode.jsx`
 
-### Development Tools
-- **ESLint** - Code linting and formatting
-- **GitHub Pages** - Deployment platform
-
-## 🚀 Getting Started
+## Getting started
 
 ### Prerequisites
 
-- Node.js (v16 or higher)
-- npm or yarn
+- Node.js (v16+ recommended)
+- npm
 
-### Installation
+### Run locally
 
-1. **Clone the repository**
-   ```bash
-   git clone https://github.com/your-username/portfolio.git
-   cd portfolio
-   ```
-
-2. **Install dependencies**
-   ```bash
-   npm install
-   ```
-
-3. **Start development server**
-   ```bash
-   npm run dev
-   ```
-
-4. **Open your browser**
-   Navigate to `http://localhost:5173`
-
-## 📜 Available Scripts
-
-- `npm run dev` - Start development server
-- `npm run build` - Build for production
-- `npm run preview` - Preview production build locally
-- `npm run lint` - Run ESLint for code quality
-
-## 🌐 Deployment
-
-The portfolio is configured for deployment to GitHub Pages:
-
-1. **Build the project**
-   ```bash
-   npm run build
-   ```
-
-2. **Deploy to GitHub Pages**
-   ```bash
-   npm run deploy
-   ```
-
-*Note: Update the `homepage` field in `package.json` with your GitHub Pages URL*
-
-## 📁 Project Structure
-
-```
-portfolio/
-├── public/                 # Static assets
-├── src/
-│   ├── assets/            # Images and media files
-│   ├── Components/        # React components
-│   │   ├── Hero.jsx      # Landing section
-│   │   ├── About.jsx     # About me section
-│   │   ├── Skill.jsx     # Skills showcase
-│   │   ├── Work.jsx      # Projects portfolio
-│   │   ├── Contact.jsx   # Contact form
-│   │   └── ...           # Other components
-│   ├── App.jsx           # Main app component
-│   └── main.jsx          # App entry point
-├── package.json
-├── vite.config.js
-└── README.md
+```bash
+npm install
+npm run dev
 ```
 
-## 🎨 Customization
+Open the app at `http://localhost:5173`.
 
-### Personal Information
-Update the following files with your information:
-- `src/Components/Hero.jsx` - Name and tagline
-- `src/Components/About.jsx` - Personal details and bio
-- `src/Components/Skill.jsx` - Your technical skills
-- `src/Components/Work.jsx` - Your projects
-- `src/Components/Contact.jsx` - Contact information
+### Scripts
 
-### Styling
-- Colors are defined as CSS variables in `src/index.css`
-- Tailwind classes are used throughout for responsive design
-- Animation timings can be adjusted in component files
+- `npm run dev` — start development server
+- `npm run build` — build for production
+- `npm run lint` — run ESLint
+- `npm run preview` — preview production build
 
-## 🤝 Contributing
+## Deployment
 
-This is a personal portfolio project, but feel free to:
-- Report bugs or issues
-- Suggest improvements
-- Fork and customize for your own use
+This project includes **GitHub Pages** tooling (`gh-pages` in `package.json`). Build the site with:
 
-## 📄 License
+```bash
+npm run build
+```
 
-This project is open source and available under the [MIT License](LICENSE).
+## Contact (shown on the site)
 
-## 📞 Contact
-
-**Himanshu Kumar**
-- Portfolio: [Your Portfolio URL]
-- LinkedIn: [Your LinkedIn]
-- Email: [your.email@example.com]
+- Email: rajh5343@gmail.com
+- Phone: +91 6201030273
+- GitHub: https://github.com/himanshukumar-18
+- LinkedIn: https://www.linkedin.com/in/himanshu-kumar-8b5845313/
 
 ---
 
-*Built with ❤️ using React & Vite*
+Built with ❤️ using **React**, **Vite**, **Tailwind CSS**, and **Framer Motion**.
+

@@ -7,6 +7,8 @@ const links = [
   { name: "Education", href: "#Education" },
   { name: "Skills", href: "#Skills" },
   { name: "Work", href: "#Work" },
+  { name: "Achievements", href: "#Achievements" },
+  { name: "LeetCode", href: "#Leetcode" },
   { name: "Contact", href: "#Contact" },
 ];
 
@@ -17,91 +19,109 @@ const Nav = () => {
   const { scrollYProgress } = useScroll();
 
   useEffect(() => {
-    const sections = links.map((link) =>
-      document.querySelector(link.href)
-    );
+    const handleScroll = () => {
+      const sections = links.map((link) =>
+        document.querySelector(link.href)
+      );
 
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            setActive(`#${entry.target.id}`);
-          }
-        });
-      },
-      {
-        threshold: 0.4,
-      }
-    );
+      const scrollPosition = window.scrollY + 200;
 
-    sections.forEach((section) => {
-      if (section) observer.observe(section);
-    });
+      sections.forEach((section) => {
+        if (!section) return;
 
-    return () => observer.disconnect();
+        const top = section.offsetTop;
+        const height = section.offsetHeight;
+
+        if (
+          scrollPosition >= top &&
+          scrollPosition < top + height
+        ) {
+          setActive(`#${section.id}`);
+        }
+      });
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    handleScroll();
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
   }, []);
+
+  const handleScrollTo = (href) => {
+    const target = document.querySelector(href);
+
+    if (target) {
+      target.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
+    }
+
+    setOpen(false);
+  };
 
   return (
     <>
-      {/* Scroll Progress */}
+      {/* Progress Bar */}
       <motion.div
         style={{
           scaleX: scrollYProgress,
         }}
         className="
-fixed
-top-0
-left-0
-right-0
-h-[2px]
-bg-[var(--accent-primary)]
-origin-left
-z-[999]
-"
+          fixed
+          top-0
+          left-0
+          right-0
+          h-[3px]
+          bg-[var(--accent-primary)]
+          origin-left
+          z-[999]
+          shadow-[0_0_15px_#f9004d]
+        "
       />
+
       <motion.header
-        initial={{
-          y: -40,
-          opacity: 0,
-        }}
-        animate={{
-          y: 0,
-          opacity: 1,
-        }}
-        transition={{
-          duration: 0.6,
-        }}
+        initial={{ y: -40, opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}
+        transition={{ duration: 0.6 }}
         className="
-      fixed
-      top-4
-      left-0
-      w-full
-      z-50
-      px-4
-    "
+          fixed
+          top-4
+          left-0
+          w-full
+          z-50
+          px-4
+        "
       >
         <div
           className="
-        max-w-7xl
-        mx-auto
-        px-6
-        py-4
-        rounded-2xl
-        backdrop-blur-xl
-        bg-black/20
-        border border-white/10
-        shadow-[0_8px_40px_rgba(0,0,0,.35)]
-      "
+            max-w-7xl
+            mx-auto
+            px-6
+            py-4
+            rounded-2xl
+            backdrop-blur-xl
+            bg-black/20
+            border border-white/10
+            shadow-[0_8px_40px_rgba(0,0,0,.35)]
+          "
         >
           <div className="flex items-center justify-between">
             {/* Logo */}
             <a
               href="#Home"
+              onClick={(e) => {
+                e.preventDefault();
+                handleScrollTo("#Home");
+              }}
               className="
-            text-xl
-            font-semibold
-            text-[var(--text-primary)]
-          "
+                text-xl
+                font-semibold
+                text-[var(--text-primary)]
+              "
             >
               Himanshu
               <span className="text-[var(--accent-primary)]">
@@ -109,8 +129,8 @@ z-[999]
               </span>
             </a>
 
-            {/* Desktop Nav */}
-            <nav className="hidden md:block">
+            {/* Desktop Menu */}
+            <nav className="hidden lg:block">
               <ul className="flex items-center gap-8">
                 {links.map((item) => (
                   <li
@@ -119,15 +139,20 @@ z-[999]
                   >
                     <a
                       href={item.href}
+                      onClick={(e) => {
+                        e.preventDefault();
+                        handleScrollTo(item.href);
+                      }}
                       className={`
-                    text-sm
-                    transition-all
-                    duration-300
-                    ${active === item.href
+                        text-sm
+                        font-medium
+                        transition-all
+                        duration-300
+                        ${active === item.href
                           ? "text-[var(--accent-primary)]"
                           : "text-[var(--text-secondary)] hover:text-white"
                         }
-                  `}
+                      `}
                     >
                       {item.name}
                     </a>
@@ -135,14 +160,21 @@ z-[999]
                     {active === item.href && (
                       <motion.span
                         layoutId="activeLink"
+                        transition={{
+                          type: "spring",
+                          stiffness: 350,
+                          damping: 30,
+                        }}
                         className="
-                      absolute
-                      left-0
-                      -bottom-2
-                      h-[2px]
-                      w-full
-                      bg-[var(--accent-primary)]
-                    "
+                          absolute
+                          left-0
+                          right-0
+                          -bottom-3
+                          h-[2px]
+                          rounded-full
+                          bg-[var(--accent-primary)]
+                          shadow-[0_0_12px_#f9004d]
+                        "
                       />
                     )}
                   </li>
@@ -152,34 +184,35 @@ z-[999]
 
             {/* Right Side */}
             <div className="flex items-center gap-3">
-              <a
-                href="mailto:rajh5343@gmail.com?subject=Let's Work Together"
+              <button
+                onClick={() => handleScrollTo("#Contact")}
                 className="
-              hidden md:flex
-              items-center
-              gap-2
-              px-5 py-2.5
-              rounded-xl
-              bg-[var(--accent-primary)]
-              text-white
-              text-sm
-              font-medium
-              hover:scale-105
-              transition-all
-              duration-300
-            "
+                  hidden md:flex
+                  items-center
+                  gap-2
+                  px-5 py-2.5
+                  rounded-xl
+                  bg-[var(--accent-primary)]
+                  text-white
+                  text-sm
+                  font-medium
+                  hover:scale-105
+                  transition-all
+                  duration-300
+                  shadow-[0_0_25px_rgba(249,0,77,.25)]
+                "
               >
                 Let's Talk
-              </a>
+              </button>
 
-              {/* Mobile Button */}
+              {/* Mobile Menu Button */}
               <button
                 onClick={() => setOpen(!open)}
                 className="
-              md:hidden
-              text-white
-              text-xl
-            "
+                  lg:hidden
+                  text-white
+                  text-xl
+                "
               >
                 <i
                   className={
@@ -209,25 +242,36 @@ z-[999]
                 opacity: 0,
                 y: -20,
               }}
+              transition={{
+                duration: 0.25,
+              }}
               className="
-            md:hidden
-            mt-4
-            rounded-2xl
-            backdrop-blur-xl
-            bg-black/30
-            border border-white/10
-          "
+                lg:hidden
+                mt-4
+                rounded-2xl
+                backdrop-blur-xl
+                bg-black/30
+                border border-white/10
+                shadow-[0_10px_40px_rgba(0,0,0,.4)]
+              "
             >
               <ul className="p-6 space-y-5">
                 {links.map((item) => (
                   <li key={item.href}>
                     <a
                       href={item.href}
-                      onClick={() => setOpen(false)}
-                      className="
-                    text-[var(--text-secondary)]
-                    hover:text-[var(--accent-primary)]
-                  "
+                      onClick={(e) => {
+                        e.preventDefault();
+                        handleScrollTo(item.href);
+                      }}
+                      className={`
+                        block
+                        transition-colors
+                        ${active === item.href
+                          ? "text-[var(--accent-primary)]"
+                          : "text-[var(--text-secondary)]"
+                        }
+                      `}
                     >
                       {item.name}
                     </a>
@@ -236,26 +280,26 @@ z-[999]
               </ul>
 
               <div className="p-6 pt-0">
-                <a
-                  href="mailto:rajh5343@gmail.com"
+                <button
+                  onClick={() => handleScrollTo("#Contact")}
                   className="
-                flex
-                justify-center
-                py-3
-                rounded-xl
-                bg-[var(--accent-primary)]
-                text-white
-              "
+                    w-full
+                    py-3
+                    rounded-xl
+                    bg-[var(--accent-primary)]
+                    text-white
+                    font-medium
+                  "
                 >
                   Let's Talk
-                </a>
+                </button>
               </div>
             </motion.div>
           )}
         </AnimatePresence>
       </motion.header>
     </>
-  )
-}
+  );
+};
 
 export default Nav;

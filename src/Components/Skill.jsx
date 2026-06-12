@@ -77,7 +77,7 @@ const skills = [
 
 const Skills = () => {
     return (
-        <section className="relative w-full py-32">
+        <section id="Skills" className="relative w-full py-32">
             {/* Background */}
             <div className="absolute inset-0 bg-[var(--bg-primary)]" />
             <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-black/40" />

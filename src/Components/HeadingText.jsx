@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 
 const TypingText = () => {
-  const text = "Software Engineer";
+  const text = "Software Developer";
   const [displayed, setDisplayed] = useState("");
 
   useEffect(() => {

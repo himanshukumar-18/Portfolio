@@ -35,11 +35,11 @@ function App() {
       {/* about page */}
       <About />
 
-      {/* skills section */}
-      <Skills />
-
       {/* education section */}
       <Education />
+      
+      {/* skills section */}
+      <Skills />
 
       {/* work section */}
       <Work />
