@@ -113,7 +113,7 @@ const Work = () => {
 
                 <div className="mt-16 grid grid-cols-3 gap-4 md:gap-8 max-w-3xl mx-auto">
                     {[
-                        { value: "10+", label: "Projects" },
+                        { value: "2+", label: "Projects" },
                         { value: "3+", label: "Clients" },
                         { value: "100%", label: "Dedication" },
                     ].map((item, index) => (

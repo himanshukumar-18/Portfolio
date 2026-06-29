@@ -36,6 +36,20 @@ const skills = [
         ),
     },
     {
+        title: "AI/ML",
+        accent: "from-violet-500 to-indigo-500",
+        items: ["Generative ai", "LongChain", "LongGraph"],
+        icon: (
+            <svg viewBox="0 0 24 24" className="w-7 h-7">
+                <path
+                    d="M12 2v20M2 12h20"
+                    stroke="currentColor"
+                    strokeWidth="1.5"
+                />
+            </svg>
+        ),
+    },
+    {
         title: "Database",
         accent: "from-emerald-500 to-teal-500",
         items: ["MongoDB", "MySQL", "PostgreSQL"],

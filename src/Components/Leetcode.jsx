@@ -1,35 +1,44 @@
 import { motion } from "framer-motion";
+import { useLeetCode } from "../hook/useLeetCode"
 
-const stats = [
-    {
-        value: "150+",
-        label: "Problems Solved",
-    },
-    {
-        value: "50+",
-        label: "Easy",
-    },
-    {
-        value: "80+",
-        label: "Medium",
-    },
-    {
-        value: "20+",
-        label: "Hard",
-    },
-];
 
-const topics = [
-    "Arrays",
-    "Strings",
-    "Binary Search",
-    "Linked Lists",
-    "Trees",
-    "BST",
-    "Dynamic Programming",
-];
 
 const Leetcode = () => {
+
+    const LEETCODE_USERNAME = "himanshukumar0918";
+
+    const { data, status } = useLeetCode(LEETCODE_USERNAME)
+
+    const stats = [
+        {
+            value: data?.totalSolved,
+            label: "Problems Solved",
+        },
+        {
+            value: data?.easySolved,
+            label: "Easy",
+        },
+        {
+            value: data?.mediumSolved,
+            label: "Medium",
+        },
+        {
+            value: data?.hardSolved,
+            label: "Hard",
+        },
+    ];
+
+    const topics = [
+        "Arrays",
+        "Strings",
+        "Binary Search",
+        "Linked Lists",
+        "Trees",
+        "BST",
+        "Dynamic Programming",
+    ];
+
+
     return (
         <section
             id="Leetcode"
@@ -71,25 +80,29 @@ const Leetcode = () => {
                 {/* Stats */}
 
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-5 mt-16">
-                    {stats.map((item, index) => (
-                        <motion.div
-                            key={index}
-                            initial={{
-                                opacity: 0,
-                                y: 30,
-                            }}
-                            whileInView={{
-                                opacity: 1,
-                                y: 0,
-                            }}
-                            viewport={{ once: true }}
-                            transition={{
-                                delay: index * 0.1,
-                            }}
-                            whileHover={{
-                                y: -6,
-                            }}
-                            className="
+
+                    {status === "loading" && <p>Loading...</p>}
+                    {status === "error" && <p>Could not load stats.</p>}
+                    {status === "success" &&
+                        stats.map((item, index) => (
+                            <motion.div
+                                key={index}
+                                initial={{
+                                    opacity: 0,
+                                    y: 30,
+                                }}
+                                whileInView={{
+                                    opacity: 1,
+                                    y: 0,
+                                }}
+                                viewport={{ once: true }}
+                                transition={{
+                                    delay: index * 0.1,
+                                }}
+                                whileHover={{
+                                    y: -6,
+                                }}
+                                className="
                 rounded-3xl
                 bg-white/5
                 backdrop-blur-xl
@@ -97,16 +110,16 @@ const Leetcode = () => {
                 p-6
                 text-center
               "
-                        >
-                            <h3 className="text-3xl font-bold text-white">
-                                {item.value}
-                            </h3>
+                            >
+                                <h3 className="text-3xl font-bold text-white">
+                                    {item.value}
+                                </h3>
 
-                            <p className="mt-2 text-sm text-[var(--text-muted)]">
-                                {item.label}
-                            </p>
-                        </motion.div>
-                    ))}
+                                <p className="mt-2 text-sm text-[var(--text-muted)]">
+                                    {item.label}
+                                </p>
+                            </motion.div>
+                        ))}
                 </div>
 
                 {/* Main Card */}

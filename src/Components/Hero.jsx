@@ -200,7 +200,7 @@ const Hero = () => {
         className="mt-10 flex items-center justify-center gap-8 text-center flex-wrap"
     >
         {[
-            { value: "10+", label: "Projects Built" },
+            { value: "2+", label: "Projects Built" },
             { value: "3+", label: "Client Works" },
             { value: "Open", label: "For Hiring" },
         ].map((item, index) => (
