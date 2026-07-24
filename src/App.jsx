@@ -1,16 +1,16 @@
 import "./App.css";
-import Footer from "./Components/Footer";
-import Nav from "./Components/Nav";
-import Hero from "./Components/Hero";
+//import Footer from "./Components/Footer";
+import Navbar from "./Components/Navbar/Navbar";
+import Hero from "./Components/Hero/Hero";
 import About from "./Components/About";
-import Contact from "./Components/Contact";
-import Skills from "./Components/Skill";
-import Work from "./Components/Work";
+//import Contact from "./Components/Contact";
+//import Skills from "./Components/Skill";
+//import Work from "./Components/Work";
 import BackToTop from "./Components/BackToTop";
-import SocialRail from "./Components/SocialRail";
-import Education from "./Components/Education";
-import Achievements from "./Components/Achievements";
-import Leetcode from "./Components/Leetcode";
+import SocialRail from "./Components/SocialRails/SocialRail";
+//import Education from "./Components/Education";
+//import Achievements from "./Components/Achievements";
+//import Leetcode from "./Components/Leetcode";
 
 function App() {
 
@@ -25,36 +25,15 @@ function App() {
       {/* hero page */}
       <div id="Home" className="heroPage w-full">
         <div className="navContainer">
-          <Nav />
+          <Navbar />
         </div>
 
         {/* inner text */}
         <Hero />
       </div>
 
-      {/* about page */}
+      {/* about */}
       <About />
-
-      {/* education section */}
-      <Education />
-      
-      {/* skills section */}
-      <Skills />
-
-      {/* work section */}
-      <Work />
-
-      {/* Achievements & Certifications */}
-      <Achievements/>
-
-      {/* Leetcode section */}
-      <Leetcode />
-
-      {/* hire me */}
-      <Contact />
-
-      {/* footer */}
-      <Footer />
     </>
   );
 }

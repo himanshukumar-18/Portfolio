@@ -5,60 +5,105 @@
     /* fonts */
     --font-body: "Poppins", sans-serif, system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
 
-    /* ===== Base Backgrounds ===== */
-    --bg-primary: #0b0d12;
-    /* Main background (near-black, not pure black) */
-    --bg-secondary: #11141b;
-    /* Sections */
-    --bg-tertiary: #171b24;
-    /* Cards */
+    /* ===========================
+      BACKGROUND
+  ============================ */
+    --bg-primary: #f8f5ef;
+    --bg-secondary: #ffffff;
+    --bg-tertiary: #f3efe6;
+    --bg-card: #ffffff;
 
-    /* ===== Glass / Blur ===== */
-    --glass-bg: rgba(255, 255, 255, 0.08);
-    --glass-border: rgba(255, 255, 255, 0.18);
-    --glass-shadow: 0 8px 30px rgba(0, 0, 0, 0.35);
+    /* ===========================
+      TEXT
+  ============================ */
+    --text-primary: #111111;
+    --text-secondary: #444444;
+    --text-muted: #6d6d6d;
 
-    /* ===== Text Colors ===== */
-    --text-primary: #f5f7fa;
-    /* Main text */
-    --text-secondary: #b5b9c6;
-    /* Sub text */
-    --text-muted: #8a8f9e;
-    /* Muted / labels */
+    /* ===========================
+      BRAND COLORS
+  ============================ */
 
-    /* ===== Accent (Brand Color) ===== */
+    /* Keep your portfolio identity */
     --accent-primary: #f9004d;
-    /* Your pink – keep it */
-    --accent-soft: rgba(249, 0, 77, 0.15);
-    --accent-glow: 0 0 30px rgba(249, 0, 77, 0.35);
 
-    /* ===== Borders ===== */
-    --border-light: rgba(255, 255, 255, 0.12);
-    --border-dark: rgba(0, 0, 0, 0.4);
+    /* Secondary accent */
+    --accent-blue: #2f6bff;
 
-    /* ===== Buttons ===== */
-    --btn-bg: rgba(255, 255, 255, 0.08);
-    --btn-hover: rgba(249, 0, 77, 0.85);
+    /* Highlight */
+    --accent-yellow: #ffd329;
+
+    /* Success */
+    --accent-green: #59c96b;
+
+    /* Neutral */
+    --accent-black: #111111;
+    --accent-white: #ffffff;
+
+    /* ===========================
+      BORDERS
+  ============================ */
+
+    --border-primary: #111111;
+    --border-light: #d8d8d8;
+
+    --border-width: 3px;
+    --border-radius: 4px;
+
+    /* ===========================
+      BUTTONS
+  ============================ */
+
+    --btn-primary: #f9004d;
+    --btn-secondary: #2f6bff;
+    --btn-yellow: #ffd329;
+
     --btn-text: #ffffff;
 
-    /* ===== Gradients ===== */
-    --gradient-accent: linear-gradient(135deg,
-            #f9004d,
-            #ff4f8b);
+    /* ===========================
+      SHADOWS
+  ============================ */
 
-    --gradient-dark: linear-gradient(180deg,
-            rgba(255, 255, 255, 0.05),
-            rgba(255, 255, 255, 0));
+    --shadow-sm: 4px 4px 0px #111111;
+    --shadow-md: 6px 6px 0px #111111;
+    --shadow-lg: 8px 8px 0px #111111;
 
-    /* ===== Radius ===== */
-    --radius-sm: 8px;
-    --radius-md: 14px;
-    --radius-lg: 22px;
-    --radius-xl: 28px;
+    /* ===========================
+      HOVER SHADOW
+  ============================ */
 
-    /* ===== Transition ===== */
-    --transition-fast: 0.2s ease;
-    --transition-smooth: 0.35s ease;
+    --shadow-hover: 10px 10px 0px #111111;
+
+    /* ===========================
+      PAPER EFFECT
+  ============================ */
+
+    --paper-shadow:
+        0 2px 0 #111111,
+        4px 4px 0 #111111;
+
+    /* ===========================
+      STICKERS
+  ============================ */
+
+    --sticker-yellow: #ffd329;
+    --sticker-pink: #f9004d;
+    --sticker-blue: #2f6bff;
+    --sticker-green: #59c96b;
+
+    /* ===========================
+      SECTION SPACING
+  ============================ */
+
+    --section-padding: 120px;
+
+    /* ===========================
+      TRANSITION
+  ============================ */
+
+    --transition-fast: .2s ease;
+    --transition-normal: .35s ease;
+    --transition-slow: .5s ease;
 }
 
 html {
@@ -73,18 +118,18 @@ html {
     html {
         scroll-behavior: smooth;
     }
-    
+
     body {
         /* Smooth scrolling with momentum */
         overflow-y: scroll;
         -webkit-overflow-scrolling: touch;
     }
-    
+
     /* Smooth scroll anchor links */
     a[href^="#"] {
         scroll-behavior: smooth;
     }
-    
+
     /* Section transitions */
     section {
         will-change: transform, opacity;
@@ -104,22 +149,62 @@ body {
     color: white;
 }
 
-/* Custom scrollbar */
+/* ================================
+   Portfolio Scrollbar
+================================ */
+
 ::-webkit-scrollbar {
-    width: 8px;
+    width: 18px;
 }
 
 ::-webkit-scrollbar-track {
     background: var(--bg-primary);
+    border-left: 3px solid var(--border-primary);
 }
 
 ::-webkit-scrollbar-thumb {
-    background: var(--text-muted);
-    border-radius: 4px;
+    background: linear-gradient(to bottom,
+            var(--accent-yellow),
+            #FFD84D);
+
+    border: 3px solid var(--border-primary);
+
+    box-shadow: 4px 4px 0 var(--border-primary);
+
+    border-radius: 0;
+
+    min-height: 60px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
     background: var(--accent-primary);
+}
+
+::-webkit-scrollbar-thumb:active {
+    background: var(--accent-blue);
+}
+
+::-webkit-scrollbar-corner {
+    background: var(--bg-primary);
+}
+
+/* ================================
+   Hide Scrollbar on Tablet & Mobile
+================================ */
+
+@media (max-width: 1024px) {
+    html {
+        scrollbar-width: none;
+        /* Firefox */
+        -ms-overflow-style: none;
+        /* IE & Edge */
+    }
+
+    html::-webkit-scrollbar,
+    body::-webkit-scrollbar {
+        display: none;
+        /* Chrome, Safari, Edge */
+    }
 }
 
 /* Focus styles for accessibility */
@@ -139,4 +224,3 @@ body {
 .preload * {
     transition: none !important;
 }
-
