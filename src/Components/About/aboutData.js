@@ -1,5 +1,3 @@
-// src/components/About/aboutData.js
-
 import {
     User,
     Code2,
@@ -23,7 +21,6 @@ import {
     Workflow,
     Boxes,
     Cpu,
-    CheckCircle2,
 } from "lucide-react";
 
 /* ===========================

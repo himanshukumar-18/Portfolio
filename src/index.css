@@ -107,27 +107,22 @@
 }
 
 html {
-    scroll-behavior: smooth;
+    /* scroll-behavior is handled by useSmoothScroll hook (JS inertia engine) */
+    /* Do NOT set scroll-behavior: smooth here — it fights the lerp engine    */
+    scroll-behavior: auto;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     scroll-padding-top: 100px;
+    scrollbar-width: none;        /* Firefox */
+    -ms-overflow-style: none;     /* IE & Edge */
 }
 
-/* Premium smooth scrolling */
+/* Premium smooth scrolling — handled by useSmoothScroll (inertia lerp engine) */
+/* Accessibility: reduced-motion users get native scroll, no JS override       */
 @media (prefers-reduced-motion: no-preference) {
-    html {
-        scroll-behavior: smooth;
-    }
-
     body {
-        /* Smooth scrolling with momentum */
         overflow-y: scroll;
         -webkit-overflow-scrolling: touch;
-    }
-
-    /* Smooth scroll anchor links */
-    a[href^="#"] {
-        scroll-behavior: smooth;
     }
 
     /* Section transitions */
@@ -149,63 +144,12 @@ body {
     color: white;
 }
 
-/* ================================
-   Portfolio Scrollbar
-================================ */
 
-::-webkit-scrollbar {
-    width: 18px;
-}
-
-::-webkit-scrollbar-track {
-    background: var(--bg-primary);
-    border-left: 3px solid var(--border-primary);
-}
-
-::-webkit-scrollbar-thumb {
-    background: linear-gradient(to bottom,
-            var(--accent-yellow),
-            #FFD84D);
-
-    border: 3px solid var(--border-primary);
-
-    box-shadow: 4px 4px 0 var(--border-primary);
-
-    border-radius: 0;
-
-    min-height: 60px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-    background: var(--accent-primary);
-}
-
-::-webkit-scrollbar-thumb:active {
-    background: var(--accent-blue);
-}
-
-::-webkit-scrollbar-corner {
-    background: var(--bg-primary);
-}
-
-/* ================================
-   Hide Scrollbar on Tablet & Mobile
-================================ */
-
-@media (max-width: 1024px) {
-    html {
-        scrollbar-width: none;
-        /* Firefox */
-        -ms-overflow-style: none;
-        /* IE & Edge */
-    }
-
-    html::-webkit-scrollbar,
+html::-webkit-scrollbar,
     body::-webkit-scrollbar {
         display: none;
         /* Chrome, Safari, Edge */
     }
-}
 
 /* Focus styles for accessibility */
 *:focus-visible {

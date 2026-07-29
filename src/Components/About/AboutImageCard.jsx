@@ -5,7 +5,7 @@ import {
     CheckCircle2,
 } from "lucide-react";
 
-import profile from "../../images/profile.jpg";
+import profile from "../../images/profile.png";
 
 const AboutImageCard = () => {
     return (

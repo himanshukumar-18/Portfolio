@@ -103,8 +103,8 @@ const MobileRail = () => {
                     className="
                         relative
 
-                        w-16
-                        h-16
+                        w-14
+                        h-14
 
                         flex
                         flex-col

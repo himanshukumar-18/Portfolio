@@ -3,37 +3,21 @@ import { createRoot } from 'react-dom/client'
 import './index.css'
 import App from './App.jsx'
 
-// Premium smooth scroll behavior
+// Anchor-click handler: sets the inertia scroll engine's target
+// so navigation links glide smoothly instead of instant-jumping.
 if (typeof window !== 'undefined') {
-  // Override default scroll behavior for anchor links
-  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-      e.preventDefault();
-      const target = document.querySelector(this.getAttribute('href'));
-      if (target) {
-        // Premium smooth scroll with easing
-        const targetPosition = target.getBoundingClientRect().top + window.pageYOffset - 80;
-        const startPosition = window.pageYOffset;
-        const distance = targetPosition - startPosition;
-        const duration = 1200; // Slower = more premium feel
-        let start = null;
-
-        window.requestAnimationFrame(step => {
-          if (start === null) start = step;
-          const progress = step - start;
-          
-          // Ease out cubic - starts fast, ends very slow for premium feel
-          const ease = 1 - Math.pow(1 - progress / duration, 3);
-          
-          if (progress < duration) {
-            window.scrollTo(0, startPosition + distance * ease);
-            window.requestAnimationFrame(step);
-          } else {
-            window.scrollTo(0, targetPosition);
-          }
-        });
-      }
-    });
+  document.addEventListener('click', (e) => {
+    const anchor = e.target.closest('a[href^="#"]');
+    if (!anchor) return;
+    const id = anchor.getAttribute('href').slice(1);
+    const el = document.getElementById(id);
+    if (!el) return;
+    e.preventDefault();
+    // Dispatch a custom event that the inertia hook listens for
+    const offsetTop = el.getBoundingClientRect().top + window.scrollY - 80;
+    window.dispatchEvent(
+      new CustomEvent('smoothScrollTo', { detail: { y: offsetTop } })
+    );
   });
 }
 

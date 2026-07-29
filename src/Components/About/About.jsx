@@ -3,7 +3,6 @@ import {
     AboutImageCard,
     AboutStory,
     JourneyTimeline,
-    LearningNow,
 } from "./index";
 
 const About = () => {
@@ -123,9 +122,6 @@ const About = () => {
 
                 {/* Developer Journey */}
                 <JourneyTimeline />
-
-                {/* Currently Learning */}
-                <LearningNow />
             </div>
         </section>
     );

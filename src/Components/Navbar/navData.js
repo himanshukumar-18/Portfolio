@@ -37,8 +37,8 @@ export const navLinks = [
     },
     {
         id: 7,
-        name: "LeetCode",
-        href: "#Leetcode",
+        name: "Contact",
+        href: "#Contact",
         color: "yellow",
     },
 ];
