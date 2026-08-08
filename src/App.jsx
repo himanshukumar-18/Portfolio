@@ -1,5 +1,5 @@
 import "./App.css";
-//import Footer from "./Components/Footer";
+import Footer from "./Components/Footer";
 import Navbar from "./Components/Navbar/Navbar";
 import Hero from "./Components/Hero/Hero";
 import About from "./Components/About";
@@ -51,6 +51,9 @@ function App() {
 
       {/* contact */}
       <Contact />
+
+      {/* navbar */}
+      <Footer />
     </>
   );
 }

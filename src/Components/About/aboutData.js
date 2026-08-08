@@ -23,6 +23,8 @@ import {
     Cpu,
 } from "lucide-react";
 
+import { portfolioStats } from "../../portfolioStats";
+
 /* ===========================
    HEADER
 =========================== */
@@ -38,7 +40,7 @@ export const aboutHeader = {
     ],
 
     description:
-        "I'm a passionate Full Stack Developer who enjoys building clean, responsive, and user-friendly web applications. I love learning new technologies and solving real-world problems through code.",
+        "I'm a Full Stack Developer from Hazaribagh, Jharkhand. I specialize in building React frontends, Node.js and Django backends, and connecting them with real databases. Currently exploring AI integration with LangChain to build smarter applications.",
 };
 
 /* ===========================
@@ -50,13 +52,13 @@ export const profileCard = {
 
     role: "Full Stack Developer",
 
-    location: "India",
+    location: "Hazaribagh, Jharkhand, India",
 
     availability: "Available for Full-Time & Freelance",
 
     sticker: "Available",
 
-    imageAlt: "Himanshu Kumar",
+    imageAlt: "Himanshu Kumar — Full Stack Developer",
 };
 
 /* ===========================
@@ -71,7 +73,7 @@ export const storyCards = [
         color: "var(--accent-yellow)",
 
         description:
-            "I'm a passionate Full Stack Developer who enjoys learning modern technologies, solving real-world problems, and continuously improving my skills.",
+            "A self-taught Full Stack Developer from Jharkhand who started coding in 2024. I've shipped 3 production projects — including two live client websites — while pursuing my BCA degree.",
     },
 
     {
@@ -81,7 +83,7 @@ export const storyCards = [
         color: "var(--accent-blue)",
 
         description:
-            "I build responsive websites, REST APIs, dashboards, and full-stack applications using React, Node.js, Django, PostgreSQL, Docker, and modern development tools.",
+            "Full-stack web applications using React, Node.js, Express, Django, MongoDB, and PostgreSQL. From REST APIs to responsive UIs, I own the entire stack.",
     },
 
     {
@@ -91,7 +93,7 @@ export const storyCards = [
         color: "var(--accent-primary)",
 
         description:
-            "My goal is to grow as a software developer, contribute to meaningful products, collaborate with talented teams, and build software that creates value.",
+            "To join a product team where I can solve real problems, grow through collaboration, and contribute to software that creates measurable value for users.",
     },
 ];
 
@@ -119,8 +121,8 @@ export const aboutStats = [
     {
         id: 3,
         icon: BriefcaseBusiness,
-        title: "Projects",
-        subtitle: "Freelance & Personal",
+        title: portfolioStats.projects,
+        subtitle: "Live Projects",
         color: "var(--accent-primary)",
     },
 
@@ -140,57 +142,57 @@ export const aboutStats = [
 export const journey = [
     {
         id: 1,
-        step: "STEP 01",
+        step: "2024 — START",
         icon: Laptop,
-        title: "Started Programming",
+        title: "First Line of Code",
         color: "var(--accent-yellow)",
 
         description:
-            "Started learning programming fundamentals and web development.",
+            "Wrote my first HTML page and fell into the rabbit hole. Started with freeCodeCamp and YouTube, then enrolled in Arena Animation's Full Stack program.",
     },
 
     {
         id: 2,
-        step: "STEP 02",
+        step: "2024",
         icon: Palette,
         title: "Frontend Development",
         color: "var(--accent-primary)",
 
         description:
-            "Learned HTML, CSS, JavaScript, React, and Tailwind CSS.",
+            "Mastered HTML, CSS, JavaScript, React, and Tailwind CSS. Built my first portfolio and multiple UI projects to solidify component-based thinking.",
     },
 
     {
         id: 3,
-        step: "STEP 03",
+        step: "2024–2025",
         icon: Server,
-        title: "Backend Development",
+        title: "Backend & APIs",
         color: "var(--accent-blue)",
 
         description:
-            "Built REST APIs using Node.js, Express.js, Python, and Django.",
+            "Built REST APIs with Node.js, Express, and Django. Learned JWT authentication, database design, and deployed apps on Vercel and Render.",
     },
 
     {
         id: 4,
-        step: "STEP 04",
+        step: "2025",
         icon: Database,
-        title: "Databases & DevOps",
+        title: "Client Projects",
         color: "var(--accent-green)",
 
         description:
-            "Worked with MongoDB, PostgreSQL, Docker, Git, and deployment.",
+            "Delivered 2+ live client websites — a catering business site and a school website — gaining experience with real requirements and real stakeholders.",
     },
 
     {
         id: 5,
-        step: "TODAY",
+        step: "NOW",
         icon: Rocket,
-        title: "Building Real Projects",
+        title: "AI Integration & Growth",
         color: "var(--accent-primary)",
 
         description:
-            "Building portfolio projects, freelance work, and learning every day.",
+            "Pursuing BCA at Jharkhand Rai University, exploring LangChain and LangGraph for AI-powered applications, and actively seeking my first full-time role.",
     },
 ];
 
@@ -264,7 +266,7 @@ export const techStack = [
 
     {
         name: "AI / LLM",
-        category: "Learning",
+        category: "Exploring",
         icon: BrainCircuit,
         color: "var(--accent-yellow)",
     },
@@ -301,7 +303,7 @@ export const learningNow = [
 
     {
         title: "Docker",
-        subtitle: "Containers",
+        subtitle: "Containers & CI/CD",
         icon: Container,
         color: "var(--accent-green)",
         status: "Practicing",
@@ -325,11 +327,11 @@ export const learningNow = [
 ];
 
 /* ===========================
-   QUOTE
+   QUOTE BANNER
 =========================== */
 
 export const quoteBanner = {
-    badge: "Final Note",
+    badge: "My Philosophy",
 
     quote: [
         "I DON'T JUST",
@@ -339,11 +341,9 @@ export const quoteBanner = {
     ],
 
     description:
-        "Every project is an opportunity to learn, improve, and create something useful. My goal is to build clean, scalable, and user-friendly software while growing as a Full Stack Developer.",
+        "Every project is an opportunity to learn, improve, and create something useful. My goal is to build clean, scalable, and user-friendly software while growing into a senior full-stack engineer.",
 
     footerTitle: "Let's Build Something Great.",
-
-    footerText: "Thanks for Visiting",
 
     buttonText: "Get In Touch",
 };

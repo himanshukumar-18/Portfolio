@@ -13,12 +13,12 @@ const HeroContent = () => {
                 ease: "easeOut",
             }}
             className="
-        flex
-        flex-col
-        items-start
-        justify-center
-        max-w-3xl
-      "
+                flex
+                flex-col
+                items-start
+                justify-center
+                max-w-3xl
+            "
         >
             {/* Availability Badge */}
             <HeroBadge
@@ -32,19 +32,19 @@ const HeroContent = () => {
                 animate={{ opacity: 1 }}
                 transition={{ delay: 0.15 }}
                 className="
-          mt-8
-          text-lg
-          md:text-xl
-          uppercase
-          tracking-[0.35em]
-          font-bold
-          text-[var(--text-secondary)]
-        "
+                    mt-8
+                    text-base
+                    md:text-lg
+                    uppercase
+                    tracking-[0.35em]
+                    font-bold
+                    text-[var(--text-secondary)]
+                "
             >
                 {heroData.greeting}
             </motion.p>
 
-            {/* Name */}
+            {/* Name — responsive sizes prevent horizontal overflow on small screens */}
             <motion.h1
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -53,58 +53,52 @@ const HeroContent = () => {
                     duration: 0.7,
                 }}
                 className="
-          mt-3
-          text-5xl
-          sm:text-6xl
-          md:text-7xl
-          lg:text-8xl
-          xl:text-9xl
-          leading-none
-          uppercase
-          font-black
-          tracking-tight
-          text-[var(--text-primary)]
-        "
+                    mt-3
+                    text-[clamp(3rem,12vw,8rem)]
+                    leading-none
+                    uppercase
+                    font-black
+                    tracking-tight
+                    text-[var(--text-primary)]
+                    break-words
+                "
             >
                 {heroData.name}
             </motion.h1>
 
             {/* Role */}
-            <motion.h2
+            <motion.p
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
-                transition={{
-                    delay: 0.4,
-                }}
+                transition={{ delay: 0.4 }}
                 className="
-          mt-6
-          text-xl
-          md:text-2xl
-          lg:text-3xl
-          uppercase
-          font-black
-          tracking-[0.15em]
-          text-[var(--accent-primary)]
-        "
+                    mt-6
+                    text-lg
+                    md:text-2xl
+                    lg:text-3xl
+                    uppercase
+                    font-black
+                    tracking-[0.12em]
+                    text-[var(--accent-primary)]
+                "
+                aria-label="Role: Full Stack Developer"
             >
                 {heroData.role}
-            </motion.h2>
+            </motion.p>
 
             {/* Description */}
             <motion.p
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
-                transition={{
-                    delay: 0.55,
-                }}
+                transition={{ delay: 0.55 }}
                 className="
-          mt-8
-          max-w-2xl
-          text-base
-          md:text-lg
-          leading-8
-          text-[var(--text-secondary)]
-        "
+                    mt-8
+                    max-w-2xl
+                    text-base
+                    md:text-lg
+                    leading-8
+                    text-[var(--text-secondary)]
+                "
             >
                 {heroData.description}
             </motion.p>
@@ -113,43 +107,41 @@ const HeroContent = () => {
             <motion.div
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
-                transition={{
-                    delay: 0.7,
-                }}
+                transition={{ delay: 0.7 }}
             >
                 <HeroButtons />
             </motion.div>
 
-            {/* Tech Stack */}
+            {/* Core Tech Stack — trimmed to 8 items, won't overflow on mobile */}
             <motion.div
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
-                transition={{
-                    delay: 0.9,
-                }}
+                transition={{ delay: 0.9 }}
                 className="
-          mt-12
-          flex
-          flex-wrap
-          gap-3
-        "
+                    mt-12
+                    flex
+                    flex-wrap
+                    gap-2
+                    sm:gap-3
+                "
             >
                 {heroData.techStack.map((tech) => (
                     <span
                         key={tech}
                         className="
-              px-4
-              py-2
-              border-[3px]
-              border-[var(--border-primary)]
-              bg-[var(--bg-card)]
-              shadow-[4px_4px_0px_#111]
-              text-sm
-              md:text-base
-              font-bold
-              uppercase
-              tracking-wider
-            "
+                            px-3
+                            sm:px-4
+                            py-2
+                            border-[3px]
+                            border-[var(--border-primary)]
+                            bg-[var(--bg-card)]
+                            shadow-[4px_4px_0px_var(--border-primary)]
+                            text-xs
+                            sm:text-sm
+                            font-bold
+                            uppercase
+                            tracking-wider
+                        "
                     >
                         {tech}
                     </span>

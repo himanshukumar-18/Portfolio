@@ -16,61 +16,17 @@ const Hero = () => {
                 lg:pt-28
             "
         >
-            {/* Decorative Background */}
+            {/* Grid paper texture — same as Hero */}
             <div
-                className="
-                    absolute
-                    inset-0
-                    pointer-events-none
-                    -z-20
-                "
-            >
-                {/* Top Left */}
-                <div
-                    className="
-                        absolute
-                        -top-20
-                        -left-20
-                        w-64
-                        h-64
-                        rounded-full
-                        bg-[var(--accent-yellow)]
-                        opacity-20
-                        blur-3xl
-                    "
-                />
-
-                {/* Bottom Right */}
-                <div
-                    className="
-                        absolute
-                        -bottom-24
-                        -right-24
-                        w-80
-                        h-80
-                        rounded-full
-                        bg-[var(--accent-blue)]
-                        opacity-15
-                        blur-3xl
-                    "
-                />
-
-                {/* Grid Pattern */}
-                <div
-                    className="
-                        absolute
-                        inset-0
-                        opacity-[0.05]
-                    "
-                    style={{
-                        backgroundImage: `
-                            linear-gradient(var(--border-primary) 1px, transparent 1px),
-                            linear-gradient(90deg, var(--border-primary) 1px, transparent 1px)
-                        `,
-                        backgroundSize: "40px 40px",
-                    }}
-                />
-            </div>
+                className="absolute inset-0 opacity-[0.04] pointer-events-none"
+                style={{
+                    backgroundImage: `
+                        linear-gradient(var(--border-primary) 1px, transparent 1px),
+                        linear-gradient(90deg, var(--border-primary) 1px, transparent 1px)
+                    `,
+                    backgroundSize: "40px 40px",
+                }}
+            />
 
             {/* Main Container */}
             <div

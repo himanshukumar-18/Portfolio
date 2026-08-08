@@ -127,6 +127,18 @@ const Achievements = () => {
                 />
             </div>
 
+            {/* Grid paper texture — same as Hero */}
+            <div
+                className="absolute inset-0 opacity-[0.04] pointer-events-none"
+                style={{
+                    backgroundImage: `
+                        linear-gradient(var(--border-primary) 1px, transparent 1px),
+                        linear-gradient(90deg, var(--border-primary) 1px, transparent 1px)
+                    `,
+                    backgroundSize: "40px 40px",
+                }}
+            />
+
             {/* ================= Content ================= */}
 
             <div

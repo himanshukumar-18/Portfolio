@@ -110,46 +110,6 @@ const tagVariants = {
 };
 
 /* ─────────────────────────────────────────────
-   DECORATIVE SHAPES (Brutalist background)
-───────────────────────────────────────────── */
-const BrutalistShapes = () => (
-    <div className="absolute inset-0 pointer-events-none overflow-hidden" aria-hidden="true">
-        {/* top-right square sticker */}
-        <motion.div
-            initial={{ opacity: 0, rotate: 0 }}
-            whileInView={{ opacity: 0.18, rotate: 15 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8, ease: "easeOut" }}
-            className="absolute -top-8 right-10 w-24 h-24 border-[4px] border-[var(--border-primary)] bg-[var(--accent-yellow)]"
-        />
-        {/* middle-left circle outline */}
-        <motion.div
-            initial={{ opacity: 0, scale: 0.7 }}
-            whileInView={{ opacity: 0.12, scale: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.9, delay: 0.15 }}
-            className="absolute top-1/2 -left-12 w-36 h-36 rounded-full border-[4px] border-[var(--border-primary)]"
-        />
-        {/* bottom-right diamond */}
-        <motion.div
-            initial={{ opacity: 0, rotate: 30 }}
-            whileInView={{ opacity: 0.15, rotate: 45 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8, delay: 0.25 }}
-            className="absolute bottom-16 right-1/4 w-16 h-16 border-[4px] border-[var(--border-primary)] bg-[var(--accent-blue)]"
-        />
-        {/* bottom-left dot cluster */}
-        <motion.div
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 0.1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.7, delay: 0.3 }}
-            className="absolute bottom-10 left-16 w-20 h-20 border-[4px] border-[var(--border-primary)] bg-[var(--accent-primary)] rotate-12"
-        />
-    </div>
-);
-
-/* ─────────────────────────────────────────────
    SECTION HEADER
 ───────────────────────────────────────────── */
 const EducationHeader = () => {
@@ -366,26 +326,7 @@ const EducationCard = ({ item, index }) => {
     );
 };
 
-/* ─────────────────────────────────────────────
-   CONNECTING DIVIDER between cards
-───────────────────────────────────────────── */
-const ConnectorLine = () => (
-    <div className="flex items-center justify-center gap-4 py-2">
-        <div className="h-[2px] flex-1 bg-[var(--border-light)]" />
-        <motion.div
-            whileHover={{ rotate: 180, scale: 1.2 }}
-            transition={{ duration: 0.3 }}
-            className="
-                w-8 h-8 shrink-0
-                border-[3px] border-[var(--border-primary)]
-                bg-[var(--accent-primary)]
-                rotate-45
-                cursor-pointer
-            "
-        />
-        <div className="h-[2px] flex-1 bg-[var(--border-light)]" />
-    </div>
-);
+
 
 
 /* ─────────────────────────────────────────────
@@ -397,9 +338,6 @@ const Education = () => {
             id="Education"
             className="relative py-24 lg:py-32 bg-[var(--bg-primary)] overflow-hidden"
         >
-            {/* Decorative brutalist shapes */}
-            <BrutalistShapes />
-
             {/* Grid paper texture — same as Hero */}
             <div
                 className="absolute inset-0 opacity-[0.04] pointer-events-none"
@@ -422,15 +360,10 @@ const Education = () => {
                     initial="hidden"
                     whileInView="visible"
                     viewport={{ once: true, amount: 0.1 }}
-                    className="flex flex-col gap-0"
+                    className="flex flex-col gap-6"
                 >
                     {educationData.map((item, index) => (
-                        <div key={item.id}>
-                            <EducationCard item={item} index={index} />
-                            {index < educationData.length - 1 && (
-                                <ConnectorLine />
-                            )}
-                        </div>
+                        <EducationCard key={item.id} item={item} index={index} />
                     ))}
                 </motion.div>
             </div>

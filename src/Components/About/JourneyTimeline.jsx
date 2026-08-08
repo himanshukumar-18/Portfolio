@@ -1,63 +1,5 @@
 import { motion } from "framer-motion";
-import {
-    Laptop,
-    Palette,
-    Server,
-    Database,
-    Brain,
-    Rocket,
-} from "lucide-react";
-
-const journey = [
-    {
-        year: "STEP 01",
-        title: "Started Programming",
-        description:
-            "Began learning programming fundamentals and explored how websites and applications are built.",
-        icon: Laptop,
-        color: "var(--accent-yellow)",
-    },
-    {
-        year: "STEP 02",
-        title: "Frontend Development",
-        description:
-            "Learned HTML, CSS, JavaScript, React, Tailwind CSS, and focused on building responsive user interfaces.",
-        icon: Palette,
-        color: "var(--accent-primary)",
-    },
-    {
-        year: "STEP 03",
-        title: "Backend Development",
-        description:
-            "Built REST APIs and backend applications using Node.js, Express.js, Python, and Django.",
-        icon: Server,
-        color: "var(--accent-blue)",
-    },
-    {
-        year: "STEP 04",
-        title: "Database & Deployment",
-        description:
-            "Worked with MongoDB, PostgreSQL, Docker, Git, and deployment workflows for full-stack projects.",
-        icon: Database,
-        color: "var(--accent-green)",
-    },
-    {
-        year: "STEP 05",
-        title: "Learning AI",
-        description:
-            "Currently learning AI development, LLM integration, LangChain, and modern backend architecture.",
-        icon: Brain,
-        color: "var(--accent-yellow)",
-    },
-    {
-        year: "TODAY",
-        title: "Building Real Projects",
-        description:
-            "Continuously building portfolio projects, freelance work, and improving problem-solving skills every day.",
-        icon: Rocket,
-        color: "var(--accent-primary)",
-    },
-];
+import { journey } from "./aboutData";
 
 const JourneyTimeline = () => {
     return (
@@ -110,7 +52,7 @@ const JourneyTimeline = () => {
             {/* Timeline */}
             <div className="relative max-w-6xl mx-auto">
 
-                {/* Center Line */}
+                {/* Center Line — desktop only */}
                 <div
                     className="
                         absolute
@@ -127,6 +69,7 @@ const JourneyTimeline = () => {
 
                         bg-[var(--border-primary)]
                     "
+                    aria-hidden="true"
                 />
 
                 <div className="space-y-14">
@@ -136,7 +79,7 @@ const JourneyTimeline = () => {
 
                         return (
                             <motion.div
-                                key={item.title}
+                                key={item.id}
                                 initial={{
                                     opacity: 0,
                                     y: 40,
@@ -164,7 +107,7 @@ const JourneyTimeline = () => {
                                     }
                                 `}
                             >
-                                <motion.div
+                                <motion.article
                                     whileHover={{
                                         y: -6,
                                         rotate: -2,
@@ -185,7 +128,7 @@ const JourneyTimeline = () => {
                                         p-6
                                     "
                                 >
-                                    {/* Step Badge */}
+                                    {/* Step Badge — real date/step */}
                                     <div
                                         className="
                                             inline-flex
@@ -204,11 +147,9 @@ const JourneyTimeline = () => {
                                             uppercase
                                             tracking-widest
                                         "
-                                        style={{
-                                            background: item.color,
-                                        }}
+                                        style={{ background: item.color }}
                                     >
-                                        {item.year}
+                                        {item.step}
                                     </div>
 
                                     {/* Icon */}
@@ -228,9 +169,8 @@ const JourneyTimeline = () => {
 
                                             shadow-[4px_4px_0_var(--border-primary)]
                                         "
-                                        style={{
-                                            background: item.color,
-                                        }}
+                                        style={{ background: item.color }}
+                                        aria-hidden="true"
                                     >
                                         <Icon
                                             size={24}
@@ -242,7 +182,8 @@ const JourneyTimeline = () => {
                                         className="
                                             mt-5
 
-                                            text-2xl
+                                            text-xl
+                                            sm:text-2xl
 
                                             font-black
 
@@ -256,6 +197,9 @@ const JourneyTimeline = () => {
                                         className="
                                             mt-4
 
+                                            text-sm
+                                            md:text-base
+
                                             leading-7
 
                                             text-[var(--text-secondary)]
@@ -263,7 +207,7 @@ const JourneyTimeline = () => {
                                     >
                                         {item.description}
                                     </p>
-                                </motion.div>
+                                </motion.article>
 
                                 {/* Timeline Dot */}
                                 <div
@@ -284,12 +228,9 @@ const JourneyTimeline = () => {
                                         border-[var(--border-primary)]
 
                                         rounded-full
-
-                                        bg-[var(--bg-primary)]
                                     "
-                                    style={{
-                                        background: item.color,
-                                    }}
+                                    style={{ background: item.color }}
+                                    aria-hidden="true"
                                 />
                             </motion.div>
                         );

@@ -6,51 +6,58 @@ const NavItem = ({ item, active, onClick }) => {
     return (
         <motion.li
             whileHover={{
-                y: -3,
-                rotate: -2,
+                y: -2,
             }}
             whileTap={{
-                scale: 0.97,
+                scale: 0.96,
             }}
             transition={{
                 type: "spring",
-                stiffness: 300,
-                damping: 18,
+                stiffness: 400,
+                damping: 20,
             }}
-            className="list-none"
+            className="list-none shrink-0"
         >
             <button
                 onClick={() => onClick(item.href)}
+                aria-current={isActive ? "page" : undefined}
                 className={`
-          relative
-          px-5
-          py-2.5
-          border-[3px]
-          border-[var(--border-primary)]
-          rounded-[4px]
-          uppercase
-          font-bold
-          tracking-widest
-          text-[13px]
-          transition-all
-          duration-200
-          select-none
+                    relative
+                    inline-flex
+                    items-center
+                    justify-center
+                    px-3
+                    xl:px-3.5
+                    py-1.5
+                    h-9
+                    border-[2.5px]
+                    border-black
+                    rounded-[4px]
+                    uppercase
+                    font-black
+                    tracking-wider
+                    text-xs
+                    whitespace-nowrap
+                    transition-all
+                    duration-150
+                    select-none
+                    cursor-pointer
 
-          ${isActive
+                    ${isActive
                         ? `
-                bg-[var(--accent-black)]
-                text-white
-                shadow-[6px_6px_0px_#111]
-              `
+                            bg-black
+                            text-white
+                            shadow-[3px_3px_0px_#111]
+                          `
                         : `
-                bg-[var(--bg-card)]
-                text-[var(--text-primary)]
-                shadow-[4px_4px_0px_#111]
-                hover:bg-[var(--accent-yellow)]
-                hover:shadow-[8px_8px_0px_#111]
-              `
+                            bg-[var(--bg-card)]
+                            text-[var(--text-primary)]
+                            shadow-[2px_2px_0px_#111]
+                            hover:bg-[var(--accent-yellow)]
+                            hover:shadow-[4px_4px_0px_#111]
+                          `
                     }
-        `}
+                `}
             >
                 {item.name}
             </button>

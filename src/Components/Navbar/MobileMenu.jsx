@@ -11,41 +11,42 @@ const MobileMenu = ({
         <AnimatePresence>
             {open && (
                 <motion.div
-                    initial={{ opacity: 0, y: -25, scale: 0.96 }}
-                    animate={{ opacity: 1, y: 0, scale: 1 }}
-                    exit={{ opacity: 0, y: -25, scale: 0.96 }}
+                    initial={{ opacity: 0, height: 0 }}
+                    animate={{ opacity: 1, height: "auto" }}
+                    exit={{ opacity: 0, height: 0 }}
                     transition={{
-                        duration: 0.25,
+                        duration: 0.2,
                         ease: "easeOut",
                     }}
                     className="
-            lg:hidden
-            mt-4
-            bg-[var(--bg-card)]
-            overflow-hidden
-          "
+                        lg:hidden
+                        border-t-[3px]
+                        border-black
+                        bg-[var(--bg-card)]
+                        overflow-hidden
+                    "
                 >
                     {/* Header */}
                     <div
                         className="
-              px-6
-              py-3
-              border-b-[3px]
-              border-[var(--border-primary)]
-              bg-[var(--accent-yellow)]
-            "
+                            px-5
+                            py-2
+                            border-b-[2px]
+                            border-black
+                            bg-[var(--accent-yellow)]
+                        "
                     >
-                        <h3
+                        <span
                             className="
-                uppercase
-                font-black
-                tracking-[0.2em]
-                text-lg
-                text-[var(--accent-black)]
-              "
+                                uppercase
+                                font-black
+                                tracking-[0.18em]
+                                text-xs
+                                text-black
+                            "
                         >
                             Navigation
-                        </h3>
+                        </span>
                     </div>
 
                     {/* Links */}
@@ -56,10 +57,10 @@ const MobileMenu = ({
                             return (
                                 <motion.li
                                     key={item.href}
-                                    initial={{ opacity: 0, x: -15 }}
+                                    initial={{ opacity: 0, x: -10 }}
                                     animate={{ opacity: 1, x: 0 }}
                                     transition={{
-                                        delay: index * 0.05,
+                                        delay: index * 0.03,
                                     }}
                                 >
                                     <button
@@ -68,35 +69,34 @@ const MobileMenu = ({
                                             setOpen(false);
                                         }}
                                         className={`
-                      w-full
-                      flex
-                      items-center
-                      justify-between
-                      px-6
-                      py-3
-                      border-b-[3px]
-                      last:border-b-0
-                      border-[var(--border-primary)]
-                      uppercase
-                      tracking-widest
-                      font-bold
-                      transition-all
-                      duration-200
+                                            w-full
+                                            flex
+                                            items-center
+                                            justify-between
+                                            px-5
+                                            py-3
+                                            border-b-[2px]
+                                            last:border-b-0
+                                            border-black
+                                            uppercase
+                                            tracking-wider
+                                            font-black
+                                            text-xs
+                                            transition-all
+                                            duration-150
+                                            cursor-pointer
 
-                      ${isActive
-                                                ? "bg-[var(--accent-black)] text-white"
+                                            ${isActive
+                                                ? "bg-black text-white"
                                                 : "bg-[var(--bg-card)] text-[var(--text-primary)] hover:bg-[var(--accent-yellow)]"
                                             }
-                    `}
+                                        `}
                                     >
                                         <span>{item.name}</span>
 
-                                        <motion.span
-                                            whileHover={{ x: 4 }}
-                                            className="text-lg"
-                                        >
+                                        <span className="text-sm font-bold">
                                             →
-                                        </motion.span>
+                                        </span>
                                     </button>
                                 </motion.li>
                             );
@@ -104,11 +104,10 @@ const MobileMenu = ({
                     </ul>
 
                     {/* Footer CTA */}
-                    <div className="p-5 bg-[var(--bg-tertiary)]">
+                    <div className="p-4 bg-[var(--bg-tertiary)] border-t-[2.5px] border-black">
                         <motion.button
                             whileHover={{
-                                y: -3,
-                                rotate: -1,
+                                y: -2,
                             }}
                             whileTap={{
                                 scale: 0.97,
@@ -118,19 +117,21 @@ const MobileMenu = ({
                                 setOpen(false);
                             }}
                             className="
-                w-full
-                py-4
-                uppercase
-                tracking-widest
-                font-black
-                border-[3px]
-                border-[var(--border-primary)]
-                bg-[var(--accent-primary)]
-                text-white
-                rounded-[4px]
-                shadow-[6px_6px_0px_#111]
-                transition-all
-              "
+                                w-full
+                                py-3
+                                uppercase
+                                tracking-widest
+                                font-black
+                                text-xs
+                                border-[2.5px]
+                                border-black
+                                bg-[var(--accent-primary)]
+                                text-white
+                                rounded-[4px]
+                                shadow-[4px_4px_0px_#111]
+                                transition-all
+                                cursor-pointer
+                            "
                         >
                             Let's Talk →
                         </motion.button>

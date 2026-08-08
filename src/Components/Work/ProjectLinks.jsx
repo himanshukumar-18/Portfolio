@@ -135,9 +135,9 @@ const ProjectLinks = ({ project }) => {
                         flex-1
 
                         flex
+                        flex-col
                         items-center
                         justify-center
-                        gap-3
 
                         px-5
                         py-3
@@ -151,12 +151,14 @@ const ProjectLinks = ({ project }) => {
 
                         font-black
                         uppercase
-                        tracking-[0.15em]
+                        tracking-[0.1em]
 
                         cursor-not-allowed
                     "
+                    title="This is a private client repository"
                 >
-                    Private Repo
+                    <span className="text-xs">Private</span>
+                    <span className="text-[10px] font-medium normal-case tracking-normal mt-0.5">Available on request</span>
                 </div>
             )}
         </div>

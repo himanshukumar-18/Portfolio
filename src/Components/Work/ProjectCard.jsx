@@ -159,7 +159,7 @@ const ProjectCard = ({ project, index }) => {
 
                     <p
                         className="
-                            text-[15px]
+                            text-sm
 
                             leading-7
 
@@ -190,7 +190,7 @@ const ProjectCard = ({ project, index }) => {
 
                     <p
                         className="
-                            text-[15px]
+                            text-sm
 
                             text-[var(--text-secondary)]
                         "

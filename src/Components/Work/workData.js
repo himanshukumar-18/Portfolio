@@ -4,9 +4,11 @@ import {
     Clock3,
 } from "lucide-react";
 
+import { portfolioStats } from "../../portfolioStats";
+
 import thumbnail from "../../images/thumbnail.png";
 import tasteCateringImg from "../../images/taste-catering.png";
-import udyanPublicSchool from "../../images/udyan-school.png"
+import udyanPublicSchool from "../../images/udyan-school.png";
 
 /* ===============================
    SECTION CONTENT
@@ -21,31 +23,31 @@ export const workSection = {
     ],
 
     description:
-        "A collection of personal projects and client work that showcase my learning, problem-solving, and full stack development experience.",
+        "A collection of personal projects and client work that showcase my problem-solving approach, full-stack skills, and ability to ship production-ready applications.",
 };
 
 /* ===============================
-   STATS
+   STATS — use central source of truth
 ================================ */
 
 export const workStats = [
     {
         id: 1,
-        value: "04+",
+        value: portfolioStats.projects,
         label: "Projects",
         icon: FolderKanban,
         accent: "var(--accent-yellow)",
     },
     {
         id: 2,
-        value: "03+",
+        value: portfolioStats.clients,
         label: "Clients",
         icon: Users,
         accent: "var(--accent-primary)",
     },
     {
         id: 3,
-        value: "1+",
+        value: portfolioStats.yearsLearning,
         label: "Years Learning",
         icon: Clock3,
         accent: "var(--accent-blue)",
@@ -91,17 +93,17 @@ export const personalProjects = [
             "https://github.com/himanshukumar-18/SkillFore",
 
         problem:
-            "Students often struggle to track their learning progress and stay motivated while building new skills.",
+            "Students learning new skills lack a structured way to track their progress and stay consistent over time, leading to abandoned learning paths.",
 
         solution:
-            "Built a modern learning platform with authentication, dashboards, progress tracking, and a responsive user interface.",
+            "Built a full-stack learning platform with user authentication, personalized dashboards, and progress tracking so learners can set goals and monitor their improvement.",
 
         role:
-            "Designed and developed the complete full stack application.",
+            "Designed and developed the complete full-stack application — frontend, backend API, database schema, and deployment.",
 
         highlights: [
-            "Authentication",
-            "Dashboard",
+            "JWT Authentication",
+            "User Dashboard",
             "Progress Tracking",
             "Responsive UI",
         ],
@@ -123,17 +125,23 @@ export const personalProjects = [
 
 export const clientProjects = [
     {
-        id: 1,
+        id: 2,
+
+        category: "client",
+
+        featured: false,
+
         title: "THE TASTE CATERING",
+
         shortTitle: "Business Website",
 
-        image: tasteCateringImg,   // ✅ Required
+        image: tasteCateringImg,
 
         problem:
-            "...",
+            "The catering business had no online presence, making it difficult for potential customers to discover their services, view the menu, or make inquiries.",
 
         solution:
-            "...",
+            "Built a professional business website with a menu showcase, service details, image gallery, and a contact section to help the business reach customers online.",
 
         role: "Full Stack Developer",
 
@@ -146,7 +154,7 @@ export const clientProjects = [
         ],
 
         live: "https://thetastecatering.com",
-        github: "",
+        github: "",  // Private client repository
     },
 
     {
@@ -156,23 +164,23 @@ export const clientProjects = [
 
         featured: false,
 
-        title: "UDAYAN PUBLIC SCHOOL",
+        title: "UDYAN PUBLIC SCHOOL",
 
         shortTitle: "School Website",
 
-        image: udyanPublicSchool, // Import this image at the top
+        image: udyanPublicSchool,
 
         live: "https://www.udayanpublicschool.org/",
 
-        github: "", // Private repository
+        github: "",  // Private client repository
 
         role: "Frontend Developer",
 
         problem:
-            "The school needed a modern, responsive website that would make it easier for students, parents, and visitors to access information on any device.",
+            "The school needed a modern, responsive website so that students, parents, and visitors could easily access information about admissions, events, and facilities on any device.",
 
         solution:
-            "Built responsive pages with a clean user interface, improved navigation, and optimized the website for desktop, tablet, and mobile users to provide a better browsing experience.",
+            "Built a fully responsive multi-page website with clean navigation, optimized layouts for mobile and desktop, and an improved user experience that reduced friction for visitors.",
 
         technologies: [
             "React",
@@ -186,7 +194,7 @@ export const clientProjects = [
             "Improved Navigation",
             "Modern UI",
         ],
-    }
+    },
 ];
 
 /* ===============================

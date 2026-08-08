@@ -1,5 +1,4 @@
 import { motion } from "framer-motion";
-import { ArrowUpRight } from "lucide-react";
 
 import { contactSocials } from "./contactData";
 
@@ -209,17 +208,6 @@ const SocialLinks = () => {
                                 >
                                     Visit
                                 </span>
-
-                                <ArrowUpRight
-                                    size={20}
-                                    strokeWidth={2.5}
-                                    className="
-                                        transition-transform
-                                        duration-200
-                                        group-hover:translate-x-1
-                                        group-hover:-translate-y-1
-                                    "
-                                />
                             </div>
                         </div>
 

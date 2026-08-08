@@ -55,6 +55,31 @@ const HeroButtons = () => {
                     </>
                 );
 
+                // CV download button
+                if (button.download) {
+                    return (
+                        <motion.a
+                            key={button.id}
+                            href={button.href}
+                            download
+                            whileHover={{
+                                y: -4,
+                                rotate: -2,
+                            }}
+                            whileTap={{
+                                scale: 0.96,
+                            }}
+                            className={`${commonClasses} ${isPrimary
+                                    ? primaryClasses
+                                    : secondaryClasses
+                                }`}
+                        >
+                            {content}
+                        </motion.a>
+                    );
+                }
+
+                // External link (new tab)
                 if (button.external) {
                     return (
                         <motion.a
@@ -79,6 +104,7 @@ const HeroButtons = () => {
                     );
                 }
 
+                // Internal anchor (smooth scroll via custom event)
                 return (
                     <motion.a
                         key={button.id}

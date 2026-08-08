@@ -16,7 +16,7 @@ export const skillsSection = {
     ],
 
     description:
-        "A collection of technologies, frameworks, and tools I use to build responsive, scalable, and modern Ai based web applications while continuously improving my development skills.",
+        "A curated set of technologies, frameworks, and tools I use to build responsive, scalable, and modern AI-integrated web applications — and keep improving with every project.",
 };
 
 export const skillCategories = [
@@ -52,7 +52,7 @@ export const skillCategories = [
         accent: "var(--accent-primary)",
 
         description:
-            "Developing secure APIs and scalable backend applications.",
+            "Developing secure REST APIs and scalable backend applications.",
 
         technologies: [
             "Node.js",
@@ -74,7 +74,7 @@ export const skillCategories = [
         accent: "var(--accent-blue)",
 
         description:
-            "Designing and managing structured and NoSQL databases.",
+            "Designing and managing both relational and NoSQL databases.",
 
         technologies: [
             "MongoDB",
@@ -93,7 +93,7 @@ export const skillCategories = [
         accent: "var(--accent-green)",
 
         description:
-            "Learning modern AI tools and integrating LLM-powered features.",
+            "Learning modern AI tools and integrating LLM-powered features into real projects.",
 
         technologies: [
             "OpenAI API",
@@ -112,10 +112,9 @@ export const skillCategories = [
         accent: "var(--accent-yellow)",
 
         description:
-            "Containerization, deployment, and version control workflows.",
+            "Containerization, version control, and cloud deployment workflows.",
 
         technologies: [
-            "CI/CD (Basic)",
             "Docker",
             "Git",
             "GitHub",
@@ -134,13 +133,11 @@ export const skillCategories = [
         accent: "var(--accent-primary)",
 
         description:
-            "Daily development tools for designing, testing, and collaboration.",
+            "Development tools for testing, API design, and productivity.",
 
         technologies: [
-            "VS Code",
             "Postman",
-            "npm",
-            "Linux",
+            "Linux (CLI)",
         ],
     },
 ];
@@ -149,5 +146,5 @@ export const skillsFooter = {
     title: "ALWAYS LEARNING.",
 
     subtitle:
-        "Technology evolves every day, and so do I. I enjoy learning new tools, improving my skills, and building better software with every project.",
+        "Technology evolves every day, and so do I. I enjoy picking up new tools, improving my fundamentals, and building better software with every project.",
 };

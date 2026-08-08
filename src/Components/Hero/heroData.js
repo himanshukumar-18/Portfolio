@@ -1,3 +1,5 @@
+import { portfolioStats } from "../../portfolioStats";
+
 export const heroData = {
     // ==========================
     // Basic Information
@@ -9,7 +11,7 @@ export const heroData = {
     role: "FULL STACK DEVELOPER",
 
     description:
-        "I'm a Full Stack Developer passionate about building modern and user-friendly web applications. I enjoy working with React, Node.js, Django, PostgreSQL, and Docker, and I'm always excited to learn new technologies and solve real-world problems through code.",
+        "I design and build full-stack web applications — from responsive React frontends to Node.js and Django backends. I've shipped production projects for real clients and I'm actively exploring AI integration in my development workflow.",
 
     // ==========================
     // Availability
@@ -26,74 +28,52 @@ export const heroData = {
     buttons: [
         {
             id: 1,
-            title: "VIEW PROJECTS",
-            href: "#projects",
+            title: "VIEW MY WORK",
+            href: "#Work",          // ← was "#projects" — section ID is "Work"
             variant: "primary",
-            icon: "->",
+            icon: "→",
         },
         {
             id: 2,
             title: "DOWNLOAD CV",
             href: "/resume.pdf",
             variant: "secondary",
-            icon: "🗂️",
-            download: true,
+            icon: "↓",
+            download: true,         // ← HeroButtons now reads this
         },
     ],
 
     // ==========================
-    // Social Links
-    // ==========================
-    socialLinks: [
-        {
-            name: "GitHub",
-            url: "https://github.com/yourusername",
-        },
-        {
-            name: "LinkedIn",
-            url: "https://linkedin.com/in/yourusername",
-        },
-        {
-            name: "LeetCode",
-            url: "https://leetcode.com/yourusername",
-        },
-        {
-            name: "Email",
-            url: "mailto:youremail@example.com",
-        },
-    ],
-
-    // ==========================
-    // Core Tech Stack
+    // Core Tech Stack (trimmed to core 8)
     // ==========================
     techStack: [
-        "JavaScript",
-        "React",
-        "Tailwind CSS",
-        "Next.js",
         "Node.js",
-        "Express",
-        "MongoDB",
-        "Python",
         "Django",
+        "Rest Api",
+        "MongoDB",
         "PostgreSQL",
         "Docker",
+        "LangChain",
+        "LangGraph",
         "Git",
-        "Ai Integration",
-        "LangChain"
+        "GitHub"
     ],
 
     // ==========================
-    // Quick Stats
+    // Quick Stats — use central source of truth
     // ==========================
     stats: [
         {
-            value: "3+",
+            value: portfolioStats.projects,
             label: "Projects",
         },
         {
-            value: "4+",
-            label: "Client",
+            value: portfolioStats.clients,
+            label: "Clients",
+        },
+        {
+            value: portfolioStats.technologies,
+            label: "Technologies",
         },
     ],
 
@@ -117,6 +97,6 @@ export const heroData = {
     seo: {
         title: "Himanshu Kumar | Full Stack Developer",
         description:
-            "Portfolio of Himanshu Kumar showcasing Full Stack Development, Django, MERN Stack, AI Applications, and modern web technologies.",
+            "Portfolio of Himanshu Kumar — Full Stack Developer specializing in React, Node.js, Django, and AI-integrated web applications.",
     },
 };

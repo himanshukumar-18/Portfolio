@@ -24,112 +24,17 @@ const Work = () => {
                 lg:py-32
             "
         >
-            {/* ================= Background Decorations ================= */}
-
+            {/* Grid paper texture — same as Hero */}
             <div
-                className="
-                    absolute
-                    inset-0
-                    pointer-events-none
-                    -z-10
-                "
-            >
-                {/* Grid */}
-                <div
-                    className="
-                        absolute
-                        inset-0
-                        opacity-[0.05]
-                    "
-                    style={{
-                        backgroundImage: `
-                            linear-gradient(var(--border-primary) 1px, transparent 1px),
-                            linear-gradient(90deg, var(--border-primary) 1px, transparent 1px)
-                        `,
-                        backgroundSize: "42px 42px",
-                    }}
-                />
-
-                {/* Top Left */}
-                <div
-                    className="
-                        absolute
-
-                        top-16
-                        left-10
-
-                        w-20
-                        h-20
-
-                        rotate-12
-
-                        bg-[var(--accent-yellow)]
-
-                        border-[4px]
-                        border-[var(--border-primary)]
-                    "
-                />
-
-                {/* Top Right */}
-                <div
-                    className="
-                        absolute
-
-                        top-32
-                        right-12
-
-                        w-16
-                        h-16
-
-                        rounded-full
-
-                        bg-[var(--accent-blue)]
-
-                        border-[4px]
-                        border-[var(--border-primary)]
-                    "
-                />
-
-                {/* Bottom Left */}
-                <div
-                    className="
-                        absolute
-
-                        bottom-20
-                        left-20
-
-                        w-12
-                        h-12
-
-                        rotate-45
-
-                        bg-[var(--accent-primary)]
-
-                        border-[4px]
-                        border-[var(--border-primary)]
-                    "
-                />
-
-                {/* Bottom Right */}
-                <div
-                    className="
-                        absolute
-
-                        bottom-16
-                        right-20
-
-                        w-24
-                        h-24
-
-                        -rotate-12
-
-                        bg-[var(--accent-green)]
-
-                        border-[4px]
-                        border-[var(--border-primary)]
-                    "
-                />
-            </div>
+                className="absolute inset-0 opacity-[0.04] pointer-events-none"
+                style={{
+                    backgroundImage: `
+                        linear-gradient(var(--border-primary) 1px, transparent 1px),
+                        linear-gradient(90deg, var(--border-primary) 1px, transparent 1px)
+                    `,
+                    backgroundSize: "40px 40px",
+                }}
+            />
 
             {/* ================= Content ================= */}
 

@@ -5,9 +5,11 @@ import {
     GraduationCap,
 } from "lucide-react";
 
+import { portfolioStats } from "../../portfolioStats";
+
 // Certificate Images
 import arenaCertificateImg from "../../images/arena.jpg";
-import internship_1 from "../../images/inter_1.jpg"
+import internship_1 from "../../images/inter_1.jpg";
 
 
 /* ======================================================
@@ -18,32 +20,32 @@ export const achievementsHeader = {
     badge: "Achievements",
     title: "CERTIFICATIONS & LEARNING",
     description:
-        "Every course, project, and certification has helped me improve my development skills. I enjoy learning modern technologies and applying them to real-world projects.",
+        "Every course, certification, and hands-on project has helped me sharpen my development skills. I enjoy learning modern technologies and applying them to real-world work.",
 };
 
 /* ======================================================
-   STATS
+   STATS — use central source of truth
 ====================================================== */
 
 export const achievementStats = [
     {
         id: 1,
         icon: Award,
-        value: "01",
-        label: "Certificate",
+        value: portfolioStats.certificates,
+        label: "Certificates",
         accent: "var(--accent-primary)",
     },
     {
         id: 2,
         icon: Code2,
-        value: "15+",
+        value: portfolioStats.technologies,
         label: "Technologies",
         accent: "var(--accent-yellow)",
     },
     {
         id: 3,
         icon: GraduationCap,
-        value: "2023",
+        value: portfolioStats.learningStart,
         label: "Learning Started",
         accent: "var(--accent-blue)",
     },
@@ -53,16 +55,16 @@ export const achievementStats = [
         value: "∞",
         label: "Learning Mindset",
         accent: "var(--accent-green)",
-    }
+    },
 ];
 
 /* ======================================================
-   CERTIFICATES
+   CERTIFICATES — unique IDs (was both id: 1)
 ====================================================== */
 
 export const certificates = [
     {
-        id: 1,
+        id: 1,               // ← was duplicate id:1, now unique
 
         featured: true,
 
@@ -100,7 +102,7 @@ export const certificates = [
     },
 
     {
-        id: 1,
+        id: 2,               // ← was duplicate id:1, now unique
 
         featured: true,
 
@@ -115,17 +117,17 @@ export const certificates = [
         pdf: "https://drive.google.com/file/d/18RQ3jvOLlcKb4PoXparuzaOIkxcB3p_p/view?usp=sharing",
 
         description:
-            "Completed a two-month Web Development Internship, collaborating with a team to develop secure authentication features using Node.js, Express.js, MongoDB, JWT, and REST APIs. Gained practical experience with backend development, Git-based collaboration, and clean coding practices.",
+            "Completed a two-month web development internship, collaborating with a team to build secure authentication features using Node.js, Express.js, MongoDB, JWT, and REST APIs. Gained practical experience with backend development, Git-based collaboration, and professional coding practices.",
 
         skills: [
             "JavaScript",
             "React",
+            "Node.js",
+            "Express.js",
+            "JWT",
             "Git",
             "GitHub",
             "Problem Solving",
-            "Node.js",
-            "Express.js",
-            "Jwt",
         ],
 
         credential: "Completed",
@@ -139,7 +141,7 @@ export const certificates = [
         employeeId: "d3746297b07005c5988",
 
         accent: "var(--accent-green)",
-    }
+    },
 ];
 
 /* ======================================================
