@@ -7,6 +7,7 @@ import {
 import { portfolioStats } from "../../portfolioStats";
 
 import thumbnail from "../../images/thumbnail.png";
+import ai_carrer_copilot from "../../images/ai_carrer_copilot.png"
 import tasteCateringImg from "../../images/taste-catering.png";
 import udyanPublicSchool from "../../images/udyan-school.png";
 
@@ -115,6 +116,58 @@ export const personalProjects = [
             "MongoDB",
             "Tailwind CSS",
             "JWT",
+        ],
+    },
+    {
+        id: 2,
+
+        category: "personal",
+
+        title: "AI Career Copilot",
+
+        shortTitle: "AI Career Platform",
+
+        image: ai_carrer_copilot,
+
+        featured: true,
+
+        live: "https://ai-career-copilot-app-ruddy.vercel.app/",
+
+        github: "https://github.com/himanshukumar-18/Ai-Career-Copilot-App",
+
+        problem:
+            "Students often struggle to choose the right career path, build strong resumes, find suitable projects, prepare for interviews, and follow a structured learning journey.",
+
+        solution:
+            "Built an AI-powered career platform that provides personalized career roadmaps, AI-assisted resume analysis and improvement, project guidance, interview preparation, and structured learning support based on the student's career goals.",
+
+        role:
+            "Designed and developed the complete full-stack application, including the React frontend, Django REST API, PostgreSQL database, AI integrations, authentication, resume builder, PDF export, project guidance, career roadmap, interview preparation, admin dashboard, and production deployment.",
+
+        highlights: [
+            "AI-Powered Career Roadmap",
+            "AI Resume Analysis & Improvement",
+            "Resume Builder & PDF Export",
+            "AI Project-Lab",
+            "AI Interview Preparation",
+            "Personalized Learning Guidance",
+            "Student Dashboard",
+            "Admin Dashboard",
+            "JWT Authentication",
+            "Responsive UI",
+        ],
+
+        technologies: [
+            "React",
+            "Django",
+            "Django REST Framework",
+            "PostgreSQL",
+            "LangChain",
+            "Groq",
+            "JWT",
+            "Docker",
+            "Vercel",
+            "Render",
         ],
     },
 ];
