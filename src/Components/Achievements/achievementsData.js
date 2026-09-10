@@ -88,10 +88,6 @@ export const certificates = [
             "React",
             "Redux",
             "Tailwind CSS",
-            "Node.js",
-            "Express.js",
-            "MongoDB",
-            "REST API",
             "Git",
             "GitHub",
         ],
@@ -120,10 +116,9 @@ export const certificates = [
             "Completed a two-month web development internship, collaborating with a team to build secure authentication features using Node.js, Express.js, MongoDB, JWT, and REST APIs. Gained practical experience with backend development, Git-based collaboration, and professional coding practices.",
 
         skills: [
-            "JavaScript",
             "React",
-            "Node.js",
-            "Express.js",
+            "Python",
+            "Django",
             "JWT",
             "Git",
             "GitHub",

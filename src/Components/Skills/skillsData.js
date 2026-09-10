@@ -55,8 +55,6 @@ export const skillCategories = [
             "Developing secure REST APIs and scalable backend applications.",
 
         technologies: [
-            "Node.js",
-            "Express.js",
             "Python",
             "Django",
             "REST API",

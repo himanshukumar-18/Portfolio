@@ -83,7 +83,7 @@ export const storyCards = [
         color: "var(--accent-blue)",
 
         description:
-            "Full-stack web applications using React, Node.js, Express, Django, MongoDB, and PostgreSQL. From REST APIs to responsive UIs, I own the entire stack.",
+            "Full-stack web applications using React, Python, Django, MongoDB, and PostgreSQL. From REST APIs to responsive UIs, I own the entire stack.",
     },
 
     {
@@ -106,7 +106,7 @@ export const aboutStats = [
         id: 1,
         icon: Layers3,
         title: "Full Stack",
-        subtitle: "React • Node • Django",
+        subtitle: "React • Python • Django",
         color: "var(--accent-yellow)",
     },
 
@@ -170,7 +170,7 @@ export const journey = [
         color: "var(--accent-blue)",
 
         description:
-            "Built REST APIs with Node.js, Express, and Django. Learned JWT authentication, database design, and deployed apps on Vercel and Render.",
+            "Built REST APIs with Python, and Django. Learned JWT authentication, database design, and deployed apps on Vercel and Render.",
     },
 
     {
