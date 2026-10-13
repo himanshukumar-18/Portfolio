@@ -59,6 +59,8 @@ export const skillCategories = [
             "Django",
             "REST API",
             "JWT Authentication",
+            "Redis",
+            "Celery"
         ],
     },
 
@@ -134,6 +136,7 @@ export const skillCategories = [
             "Development tools for testing, API design, and productivity.",
 
         technologies: [
+            "Vs Code",
             "Postman",
             "Linux (CLI)",
         ],

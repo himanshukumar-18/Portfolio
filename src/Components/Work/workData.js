@@ -10,6 +10,7 @@ import thumbnail from "../../images/thumbnail.png";
 import ai_carrer_copilot from "../../images/ai_carrer_copilot.png"
 import tasteCateringImg from "../../images/taste-catering.png";
 import udyanPublicSchool from "../../images/udyan-school.png";
+import samadhanx from "../../images/samadhanx.png"
 
 /* ===============================
    SECTION CONTENT
@@ -110,12 +111,9 @@ export const personalProjects = [
         ],
 
         technologies: [
+            "",
             "React",
-            "Node.js",
-            "Express.js",
-            "MongoDB",
             "Tailwind CSS",
-            "JWT",
         ],
     },
     {
@@ -168,6 +166,74 @@ export const personalProjects = [
             "Docker",
             "Vercel",
             "Render",
+        ],
+    },
+    {
+        id: 3,
+
+        category: "personal",
+
+        title: "SamadhanX",
+
+        shortTitle: "AI-Powered Civic Platform",
+
+        image: samadhanx,
+
+        featured: true,
+
+        live: "https://samadhanx-two.vercel.app/",
+
+        github: "https://github.com/himanshukumar-18/samadhanx",
+
+        problem:
+            "Citizens often lack a centralized platform to report societal challenges, while students, faculty, and industry partners need an organized way to collaborate on practical solutions.",
+
+        solution:
+            "SamadhanX is a role-based civic problem-solving platform that connects citizens, students, faculty, industry partners, and administrators through problem reporting, collaborative project workflows, and AI-assisted moderation.",
+
+        role:
+            "Developed full-stack features for SamadhanX using React, TypeScript, FastAPI, and PostgreSQL, integrating AI-powered moderation and LangGraph-based duplicate detection with vector similarity search. Built role-based interfaces, REST API integrations, and collaborative workflows to streamline civic problem reporting and solution discovery.",
+
+        highlights: [
+            "Role-Based Authentication & Access Control",
+            "Citizen Problem Submission & Tracking",
+            "Student Problem Discovery & Project Selection",
+            "Student Project Updates & Solution Submission",
+            "Faculty Project Review & Feedback",
+            "Industry Partner Module",
+            "Admin Dashboard & User Management",
+            "AI-Powered Problem Moderation",
+            "LangGraph-Based Duplicate Detection",
+            "AI-Assisted Problem Categorization & Summarization",
+            "Interactive Problem Feed & Search",
+            "Responsive UI & REST API Integration",
+        ],
+
+        technologies: [
+            "React",
+            "TypeScript",
+            "JavaScript",
+            "Tailwind CSS",
+            "Python",
+            "FastAPI",
+            "PostgreSQL",
+            "pgvector",
+            "SQLAlchemy",
+            "Pydantic",
+            "LangChain",
+            "LangGraph",
+            "Vector Embeddings",
+            "Redis",
+            "Celery",
+            "JWT Authentication",
+            "REST APIs",
+            "Docker",
+            "Docker Compose",
+            "Git",
+            "GitHub",
+            "Vercel",
+            "Linux",
+            "Nginx",
         ],
     },
 ];

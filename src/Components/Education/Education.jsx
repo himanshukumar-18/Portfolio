@@ -25,7 +25,7 @@ const educationData = [
     },
     {
         id: "02",
-        year: "2023 — 2025",
+        year: "2022 — 2024",
         status: "COMPLETED",
         statusColor: "bg-[var(--accent-primary)]",
         accentColor: "bg-[var(--accent-yellow)]",
@@ -53,7 +53,7 @@ const educationData = [
     },
     {
         id: "03",
-        year: "2021 — 2023",
+        year: "2020 — 2022",
         status: "COMPLETED",
         statusColor: "bg-[var(--accent-primary)]",
         accentColor: "bg-[var(--accent-blue)]",

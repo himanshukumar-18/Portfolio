@@ -11,7 +11,7 @@ export const heroData = {
     role: "FULL STACK DEVELOPER",
 
     description:
-        "I design and build full-stack web applications — from responsive React frontends to Node.js and Django backends. I've shipped production projects for real clients and I'm actively exploring AI integration in my development workflow.",
+        "I build full-stack web applications using Python, Django, and Django REST Framework, along with React for responsive, user-friendly frontends. I work with REST APIs, PostgreSQL, and modern deployment tools to develop scalable applications, while exploring AI integration to build smarter digital solutions.",
 
     // ==========================
     // Availability
@@ -36,7 +36,7 @@ export const heroData = {
         {
             id: 2,
             title: "DOWNLOAD CV",
-            href: "/resume.pdf",
+            href: "https://drive.google.com/file/d/1UzSSnVp65gbS6qeQGiIp5418xK82fAbI/view?usp=sharing",
             variant: "secondary",
             icon: "↓",
             download: true,         // ← HeroButtons now reads this
@@ -47,16 +47,27 @@ export const heroData = {
     // Core Tech Stack (trimmed to core 8)
     // ==========================
     techStack: [
-        "Node.js",
+        "Html",
+        "Css",
+        "JavaScript",
+        "React",
+        "Python",
+        "OOP's",
         "Django",
-        "Rest Api",
-        "MongoDB",
-        "PostgreSQL",
-        "Docker",
-        "LangChain",
-        "LangGraph",
-        "Git",
-        "GitHub"
+        "rest api",
+        "jwt",
+        "auth",
+        "postgresql",
+        "sql",
+        "Redis",
+        "Clerk",
+        "system design",
+        "Ai integration",
+        "langchain",
+        "langgraph",
+        "ci/cd",
+        "docker",
+        "git/github"
     ],
 
     // ==========================
